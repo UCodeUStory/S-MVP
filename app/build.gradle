@@ -44,3 +44,5 @@ dependencies {
 
 
 }
+
+apply plugin: AspectjPlugin
