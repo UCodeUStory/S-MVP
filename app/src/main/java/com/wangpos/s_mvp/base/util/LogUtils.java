@@ -8,7 +8,7 @@ public class LogUtils {
 
     private static boolean isDebug = true;
 
-    static String mTag = "LogUtils";
+    static String mTag = "qy";
 
     //for error log
     public static void error(String msg) {
@@ -164,8 +164,7 @@ public class LogUtils {
                 String lineNumber = String
                         .valueOf(stackTraceElement[currentIndex].getLineNumber());
 
-                Log.i(tag, msg + "\n  ---->at " + className + "." + methodName + "("
-                        + className + ".java:" + lineNumber + ")");
+                Log.i(tag, msg + "\n at " + className + "." + methodName + "(" + className + ".java:" + lineNumber + ")");
             } else {
                 Log.i(tag, msg);
             }

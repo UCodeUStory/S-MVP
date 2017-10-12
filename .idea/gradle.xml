@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libannotation" />
             <option value="$PROJECT_DIR$/libcomplier" />
+            <option value="$PROJECT_DIR$/myplugin" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

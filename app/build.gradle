@@ -1,6 +1,9 @@
+import com.app.plugin.AspectjPlugin
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 apply plugin: 'me.tatarka.retrolambda'
+
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
@@ -16,7 +19,16 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
+
+        debug{
+            buildConfigField ("boolean", "isTime", "true")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
         release {
+            buildConfigField ("boolean", "isTime", "false")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

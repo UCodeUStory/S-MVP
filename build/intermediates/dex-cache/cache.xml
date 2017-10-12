@@ -3,12 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.0-alpha1_acd932eddcf7d87617f77f0a78f494377074f2d3.jar" />
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-26.0.0-alpha1_11015e93677d0cdd86f67af381e6e2dfeab9cfd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.0-alpha1_c370c6916325643b1f49cc24cd7ec49502137a75.jar" />
     </item>
     <item
         is-multidex="false"
@@ -17,7 +26,7 @@
         optimize="true"
         revision="26.0.1"
         sha1="6e81b059b564e20e1430f42fb38469a4d8f118f0">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/renderscript-v8_61a9714dcd0e881bab2e0bbf98c1b53f13d3130d.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/renderscript-v8_61a9714dcd0e881bab2e0bbf98c1b53f13d3130d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -26,79 +35,70 @@
         optimize="true"
         revision="26.0.1"
         sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_63843ba97ecb61b0754ca1afed53fb718f75c3c8.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_63843ba97ecb61b0754ca1afed53fb718f75c3c8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.getkeepsafe.relinker/relinker/1.2.2/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.getkeepsafe.relinker-relinker-1.2.2_1f4771871ef3020df218f62e2f137243901bef12.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/io.realm/realm-android-library/3.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="cd9bc76e438f6e38bf6f8ba72821552fe5afbe23">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/io.realm-realm-android-library-3.4.0_f236a4674978c071952415ae0720517c79930b38.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/libannotation/build/libs/libannotation.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="8c6ce2a41cb64e47589e902b8c7fd7cfa8b3c2ee">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/libannotation_7417c11e4f967b60bb5c3972bdd2fd5e11f9ad5f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-26.0.0-alpha1_d9b9517220ba0006927eaff57a6f17f73983e7a9.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-26.0.0-alpha1_4f657f258d992837a1bf05712d297d802d8a4bae.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/libannotation/build/libs/libannotation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3024b0ddff0efcc6131b06223cc114afecda1dba">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/libannotation_04d28cd03a9ca662037ed96b37499b06bfa358b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.0-alpha1_17ddbea6a8ef757fd06057745928e6039a0dcd2e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/io.realm/realm-android-library/3.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cd9bc76e438f6e38bf6f8ba72821552fe5afbe23">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/io.realm-realm-android-library-3.4.0_13f01db45347e59e23dd3550c4e2e001f61e4859.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjrt/1.8.9/87372d9e2323313bec24b09a325bfea8ae0eb867/aspectjrt-1.8.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="87372d9e2323313bec24b09a325bfea8ae0eb867">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/aspectjrt-1.8.9_7dbaf3f0e1d7c199185d0ace1a6ec931a5a5d5d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.0-alpha1_31f8ffe2bc743e1012f6a5c522d59dfd169bc0d1.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.0-alpha1_9e40ed01d9b5f48ff22e38f54c541499d0a19f1b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_c02646030cc6822a7ab203563ab5f6dc631da4cc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-26.0.0-alpha1_c7ad9ecb1a79a025327af01b937e5a1a95150bfd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.0-alpha1_22b2adfd487e58c03c0ccae9ad61caa65745283f.jar" />
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-26.0.0-alpha1_990bf2ea227b1baac9e035334b1ec9c9101c86ae.jar" />
     </item>
     <item
         is-multidex="false"
@@ -107,34 +107,43 @@
         optimize="true"
         revision="26.0.1"
         sha1="ee860e7723eef61080e34f5b098f7ee22b356770">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/realm-annotations-3.4.0_186453beab0be65792755eaed064287008d762ff.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/realm-annotations-3.4.0_186453beab0be65792755eaed064287008d762ff.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.getkeepsafe.relinker/relinker/1.2.2/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-26.0.0-alpha1_ef610feaf8039cffa658fc8a1c46a2c50929490c.jar" />
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.getkeepsafe.relinker-relinker-1.2.2_396619e3f6aaced25aa5580630308459ad6e5a7f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.0-alpha1_f8db0a03d24736cf7b786ce2464c0aaa3c44adf4.jar" />
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_34921f7627672d3fc19bdb7912c8f2043111d620.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/Users/qiyue/AndroidStudioProjects/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_154fb79508de1fbb0f1ef7bdfe97505e586449a4.jar" />
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_d20d9e250721460ee33144bafb45d33b10413105.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.0-alpha1_db24e9e1f53fbad9c320b7601eb84f0db6d42d00.jar" />
     </item>
 
 </items>

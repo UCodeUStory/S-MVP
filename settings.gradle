@@ -1,1 +1,1 @@
-include ':app', ':libannotation', ':libcomplier'
+include ':app', ':libannotation', ':libcomplier', ':myplugin'

@@ -3,6 +3,7 @@ package com.example.processor;
 import com.example.AnnotationProcessor;
 import com.example.IProcessor;
 import com.example.InstanceFactory;
+import com.example.aspectj.MemoryCache;
 import com.example.util.Utils;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.CodeBlock;
@@ -39,7 +40,7 @@ public class InstanceProcessor implements IProcessor {
         String CLASS_NAME = "InstanceFactory";
         TypeSpec.Builder tb = classBuilder(CLASS_NAME).addModifiers(PUBLIC, FINAL).addJavadoc("@ 实例化工厂 此类由apt自动生成");
 
-        MethodSpec.Builder methodBuilder1 = MethodSpec.methodBuilder("create")/*.addAnnotation(MemoryCache.class)*/
+        MethodSpec.Builder methodBuilder1 = MethodSpec.methodBuilder("create").addAnnotation(MemoryCache.class)
                 .addJavadoc("@此方法由apt自动生成")
                 .returns(Object.class).addModifiers(PUBLIC, STATIC).addException(IllegalAccessException.class).addException(InstantiationException.class)
                 .addParameter(Class.class, "mClass");

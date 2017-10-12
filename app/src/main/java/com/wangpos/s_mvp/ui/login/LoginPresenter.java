@@ -1,6 +1,7 @@
 package com.wangpos.s_mvp.ui.login;
 
 import com.example.InstanceFactory;
+import com.example.aspectj.TimeLog;
 import com.wangpos.s_mvp.base.BasePresenter;
 
 /**
@@ -14,6 +15,7 @@ public class LoginPresenter extends LoginContract.Presenter {
         this.mModel = new LoginModel();
     }
 
+    @TimeLog
     @Override
     public void login(String name, String pass) {
         mModel.login(name, pass, new LoginContract.Model.OnLoginListener() {
