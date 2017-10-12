@@ -35,4 +35,4 @@ MVP 继续解耦
  ![image](https://github.com/UCodeUStory/S-MVP/blob/master/pic.png)
  
  - Thanks
- - [Bai xiaokang](http://note.youdao.com/)
+ - [Bai xiaokang](https://github.com/north2016)
