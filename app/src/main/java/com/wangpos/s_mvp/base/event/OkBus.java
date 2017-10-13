@@ -18,7 +18,13 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 @SuppressWarnings("unchecked")
 public class OkBus {
+
+    /**
+     * map
+     */
     private ConcurrentHashMap<Integer, CopyOnWriteArrayList<SparseArray<Event>>> mEventList = new ConcurrentHashMap<>();//存储所有事件ID以及其回调
+
+
     private ConcurrentHashMap<Integer, Object> mStickyEventList = new ConcurrentHashMap<>();//存储粘连事件ID以及其数据
     private ScheduledExecutorService mPool = Executors.newScheduledThreadPool(5);
     private Handler mHandler = new Handler(Looper.getMainLooper());

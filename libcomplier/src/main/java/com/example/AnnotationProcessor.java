@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.bindview.$;
+import com.example.processor.BindViewProcessor;
 import com.example.processor.InstanceProcessor;
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.FieldSpec;
@@ -42,6 +44,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         Set<String> annotations = new HashSet<>();
         annotations.add(Test.class.getCanonicalName());
         annotations.add(InstanceFactory.class.getCanonicalName());
+        annotations.add($.class.getCanonicalName());
 //        return Collections.singleton(Test.class.getCanonicalName());
         return annotations;
     }
@@ -51,28 +54,23 @@ public class AnnotationProcessor extends AbstractProcessor {
         mFiler = processingEnv.getFiler();
         mElements = processingEnv.getElementUtils();
         mMessager = processingEnv.getMessager();
-//        try {
-////            notice 为什么会调用三次
-//
-//            Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(Test.class);
-//
-//            for (Element element : elements) {
-//                System.err.println("********开始解析注解*******"+elements.size());
-//                createPersonClass();
-//            }
-//            System.err.println("********开始解析注解*******");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-            System.err.println("********开始解析注解*******");
-            //notice 通过对象调用就可以
-            new InstanceProcessor().process(roundEnvironment, this);
+
+////     notice 为什么会调用三次? 因为在生成的代码中如果有注解还是会被触发调用，也就会形成递归，所以尽量不要在生成代码中添加注解
+
+        System.err.println("********开始解析注解*******");
+        //notice 通过对象调用就可以
+        new InstanceProcessor().process(roundEnvironment, this);
+        new BindViewProcessor().process(roundEnvironment, this);
 
 
         return false;
     }
 
 
+    /**
+     * 测试使用
+     * @throws IOException
+     */
     private void createPersonClass() throws IOException {
         FieldSpec age = FieldSpec.builder(int.class, "age")
                 .addModifiers(Modifier.PRIVATE)

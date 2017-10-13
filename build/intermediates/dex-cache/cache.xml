@@ -52,7 +52,7 @@
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="3024b0ddff0efcc6131b06223cc114afecda1dba">
+        sha1="081f7c97de20db662add715c5aa7d0ef1712c6e2">
         <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/libannotation_04d28cd03a9ca662037ed96b37499b06bfa358b8.jar" />
     </item>
     <item

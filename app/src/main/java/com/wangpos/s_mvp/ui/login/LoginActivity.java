@@ -6,14 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
+import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
-    private EditText etName;
-    private EditText etPassword;
+
+    @$(R.id.etuserName)
+    public EditText etName;
+
+    @$(R.id.etpassword)
+    public EditText etPassword;
+
+
 
     @Override
     public int getLayoutId() {
@@ -22,9 +30,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initView() {
+        InjectView.bind(this);
         $(R.id.login).setOnClickListener(this);
-        etName = $(R.id.etuserName);
-        etPassword = $(R.id.etpassword);
+//        etName = $(R.id.etuserName);
+//        etPassword = $(R.id.etpassword);
+
     }
 
     @Override

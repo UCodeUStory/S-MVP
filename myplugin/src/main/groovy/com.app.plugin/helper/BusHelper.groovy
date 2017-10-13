@@ -11,7 +11,7 @@ import javassist.bytecode.annotation.IntegerMemberValue
 import java.lang.annotation.Annotation
 
 /**
- * Created by baixiaokang on 16/11/15.
+ * Created by qiyue on 16/11/15.
  */
 
 public class BusHelper {

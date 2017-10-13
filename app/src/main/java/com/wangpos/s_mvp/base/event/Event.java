@@ -3,7 +3,7 @@ package com.wangpos.s_mvp.base.event;
 import android.os.Message;
 
 /**
- * Created by baixiaokang on 16/11/15.
+ * Created by qiyue on 16/11/15.
  */
 
 public interface Event {

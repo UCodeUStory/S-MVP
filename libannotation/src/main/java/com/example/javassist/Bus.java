@@ -1,7 +1,7 @@
 package com.example.javassist;
 
 /**
- * Created by baixiaokang on 16/11/15.
+ * Created by qiyue on 16/11/15.
  */
 
 import java.lang.annotation.ElementType;

@@ -6,7 +6,7 @@ import javassist.bytecode.annotation.Annotation
 import org.gradle.api.Project
 
 /**
- * Created by baixiaokang on 16/11/14.
+ * Created by qiyue on 16/11/14.
  * 事件信息类
  */
 

@@ -6,7 +6,7 @@ import javassist.CtNewMethod
 import org.gradle.api.Project;
 
 /**
- * Created by baixiaokang on 16/11/15.
+ * Created by qiyue on 16/11/15.
  */
 
 public class LogTimeHelper {
