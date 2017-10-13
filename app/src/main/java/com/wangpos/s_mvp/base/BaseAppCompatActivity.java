@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.wangpos.s_mvp.R;
+import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.util.MPermissionUtils;
 import com.wangpos.s_mvp.base.util.SpUtil;
 
@@ -26,8 +27,10 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         View rootView = getLayoutInflater().inflate(this.getLayoutId(), null, false);
         this.setContentView(getLayoutId(), rootView);
+        InjectView.bind(this);
         mContext = this;
         initPresenter();
         initView();
@@ -91,5 +94,12 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     @Override
     public void onClick(View view) {
 
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        InjectView.unbind(this);
     }
 }

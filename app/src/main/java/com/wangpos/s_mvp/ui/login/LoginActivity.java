@@ -30,7 +30,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initView() {
-        InjectView.bind(this);
         $(R.id.login).setOnClickListener(this);
 //        etName = $(R.id.etuserName);
 //        etPassword = $(R.id.etpassword);
