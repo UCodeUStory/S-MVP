@@ -74,6 +74,7 @@ AOP技术常用在以下方面：
  1.在build 过程我们可以通过apt 生成java文件,再通过Aspectj解析，编织成class,最后我们还可以通过Javassist修改class和jar文件，最终打包成dex 到 apk
  
  ![image](https://github.com/UCodeUStory/S-MVP/blob/master/pic.png)
- 
+
+ - [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)
  - Thanks
- - [Bai xiaokang](http://note.youdao.com/)
+ - [Bai xiaokang]()
