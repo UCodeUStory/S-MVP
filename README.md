@@ -1,6 +1,9 @@
 ### S-MVP
 MVP 继续解耦
 
+
+
+
 1.通过模块化减少了类的创建
 
   **之前**：接口一个类，实现一个类，这样的MVP中就会出现6个类
@@ -27,6 +30,8 @@ MVP 继续解耦
 
 9.通过javassist修改字节码的方式，可以生成类，也可以在某些特定方法注入代码，在保证不修改源码的情况，完成aop，避免代码碎片化
 
+
+- [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
 
 
 ****
@@ -75,6 +80,6 @@ AOP技术常用在以下方面：
  
  ![image](https://github.com/UCodeUStory/S-MVP/blob/master/pic.png)
 
- - [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)
+
  - Thanks
  - [Bai xiaokang]()
