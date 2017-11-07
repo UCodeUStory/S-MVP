@@ -32,6 +32,7 @@ MVP 继续解耦
 
 
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
+- [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
 
 
 ****
