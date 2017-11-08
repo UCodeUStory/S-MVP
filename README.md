@@ -33,6 +33,7 @@ MVP 继续解耦
 
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
 - [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
+- [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)
 
 
 ****
@@ -58,7 +59,9 @@ MVP 继续解耦
 
 9.添加全局的异常处理,保存到指定目录下文件，每次生成新的文件，通过LRU控制数量和删除策略
 
-  
+10.添加Tinker热修复
+
+11.添加6.0权限
 
 AOP技术常用在以下方面：
 
