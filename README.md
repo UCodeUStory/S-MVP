@@ -35,7 +35,7 @@ MVP 继续解耦
 - [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
 - [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)
 - [事件状态机处理请点这里](https://github.com/UCodeUStory/StateMachine)
-
+- [MVVM设计](https://github.com/UCodeUStory/MVVM)
 ****
 ### **框架待优化**
 
