@@ -13,7 +13,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/build/classes/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/test" />
     <exclude-output />
@@ -45,6 +45,7 @@
     <orderEntry type="library" exported="" name="org.jacoco.report-0.7.5.201505241946" level="project" />
     <orderEntry type="library" exported="" name="jopt-simple-4.9" level="project" />
     <orderEntry type="library" exported="" name="protobuf-java-2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="antlr-3.5.2" level="project" />
     <orderEntry type="library" exported="" name="builder-model-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="builder-test-api-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="sdklib-25.2.2" level="project" />
@@ -69,6 +70,8 @@
     <orderEntry type="library" exported="" name="juniversalchardet-1.0.3" level="project" />
     <orderEntry type="library" exported="" name="proguard-base-5.2.1" level="project" />
     <orderEntry type="library" exported="" name="asm-debug-all-5.0.1" level="project" />
+    <orderEntry type="library" exported="" name="antlr-runtime-3.5.2" level="project" />
+    <orderEntry type="library" exported="" name="ST4-4.0.8" level="project" />
     <orderEntry type="library" exported="" name="layoutlib-api-25.2.2" level="project" />
     <orderEntry type="library" exported="" name="dvlib-25.2.2" level="project" />
     <orderEntry type="library" exported="" name="repository-25.2.2" level="project" />

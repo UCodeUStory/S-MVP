@@ -30,12 +30,23 @@ MVP 继续解耦
 
 9.通过javassist修改字节码的方式，可以生成类，也可以在某些特定方法注入代码，在保证不修改源码的情况，完成aop，避免代码碎片化
 
+10.通常我们一个页面需要不止一个请求，并且这些请求是异步的，这样可以得到很好的用户体验，往往我们还需要，等待这些请求都完成后做一些处理
+
+   我们这里封装一个SmartTask
+   
+   - 使用方法：
+      1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+      2.其他文件通过key获取SmartTask对象，在各线程执行完后调用SmartTask对象一个finish()方法
+      3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
+      
+  
 
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
 - [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
 - [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)
 - [事件状态机处理请点这里](https://github.com/UCodeUStory/StateMachine)
 - [MVVM设计](https://github.com/UCodeUStory/MVVM)
+
 ****
 ### **框架待优化**
 

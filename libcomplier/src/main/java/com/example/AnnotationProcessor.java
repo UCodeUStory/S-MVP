@@ -1,8 +1,10 @@
 package com.example;
 
 import com.example.bindview.$;
+import com.example.bindview.OnResume;
 import com.example.processor.BindViewProcessor;
 import com.example.processor.InstanceProcessor;
+import com.example.processor.LifeProcessor;
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
@@ -45,6 +47,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         annotations.add(Test.class.getCanonicalName());
         annotations.add(InstanceFactory.class.getCanonicalName());
         annotations.add($.class.getCanonicalName());
+        annotations.add(OnResume.class.getCanonicalName());
 //        return Collections.singleton(Test.class.getCanonicalName());
         return annotations;
     }
@@ -61,6 +64,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         //notice 通过对象调用就可以
         new InstanceProcessor().process(roundEnvironment, this);
         new BindViewProcessor().process(roundEnvironment, this);
+        new LifeProcessor().process(roundEnvironment,this);
 
 
         return false;

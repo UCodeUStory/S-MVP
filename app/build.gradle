@@ -52,7 +52,7 @@ dependencies {
 
     annotationProcessor project(':libcomplier')
 
-    compile project(path: ':libannotation')
+    compile project(path:  ':libannotation')
 
 
 }
