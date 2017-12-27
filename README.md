@@ -35,10 +35,10 @@ MVP 继续解耦
    我们这里封装一个SmartTask
    
    - 使用方法：
-      1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
-      2.其他文件通过key获取SmartTask对象，在各线程执行完后调用SmartTask对象一个finish()方法
-      3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
-      
+      - - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+      - - 2.其他文件通过key获取SmartTask对象，在各线程执行完后调用SmartTask对象一个finish()方法
+      - - 3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
+      - - 4.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
   
 
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)

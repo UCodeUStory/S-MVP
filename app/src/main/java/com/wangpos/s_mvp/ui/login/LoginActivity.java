@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
 import com.wangpos.s_mvp.base.util.InjectView;
+import com.wangpos.s_mvp.base.util.SmartTaskManager;
 import com.wangpos.s_mvp.base.util.ToastUtil;
+import com.wangpos.s_mvp.ui.init.InitModel;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
@@ -21,6 +24,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @$(R.id.etpassword)
     public EditText etPassword;
 
+    public SmartTaskManager smartTaskManager;
 
 
     @Override
@@ -30,9 +34,20 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initView() {
+        //tName = $(R.id.etuserName);
+        // etPassword = $(R.id.etpassword);
         $(R.id.login).setOnClickListener(this);
-//        etName = $(R.id.etuserName);
-//        etPassword = $(R.id.etpassword);
+        $(R.id.smartTask).setOnClickListener(this);
+        smartTaskManager = SmartTaskManager.as();
+        smartTaskManager.put("initTask",2);
+        smartTaskManager.get("initTask").toEnd(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(),"页面全部初始化完成",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
     }
 
@@ -58,6 +73,17 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             case R.id.login:
                 this.mPresenter.login(etName.getText().toString(),etPassword.getText().toString());
                 break;
+            case R.id.smartTask:
+                InitModel initModel = new InitModel();
+                initModel.init();
+                initModel.otherInit();
+                break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        smartTaskManager.remove("initTask");
     }
 }

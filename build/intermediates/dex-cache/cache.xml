@@ -21,15 +21,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/Library/Android/sdk/build-tools/26.0.1/renderscript/lib/renderscript-v8.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6e81b059b564e20e1430f42fb38469a4d8f118f0">
-        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/renderscript-v8_61a9714dcd0e881bab2e0bbf98c1b53f13d3130d.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/qiyue/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
         jumboMode="false"
         optimize="true"
@@ -52,8 +43,35 @@
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="081f7c97de20db662add715c5aa7d0ef1712c6e2">
+        sha1="c2325233d88266ae847d8171090452930645a52b">
         <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/libannotation_04d28cd03a9ca662037ed96b37499b06bfa358b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.getkeepsafe.relinker/relinker/1.2.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.getkeepsafe.relinker-relinker-1.2.2_396619e3f6aaced25aa5580630308459ad6e5a7f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_d20d9e250721460ee33144bafb45d33b10413105.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qiyue/Library/Android/sdk/build-tools/26.0.1/renderscript/lib/renderscript-v8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6e81b059b564e20e1430f42fb38469a4d8f118f0">
+        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/renderscript-v8_61a9714dcd0e881bab2e0bbf98c1b53f13d3130d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,30 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.getkeepsafe.relinker/relinker/1.2.2/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
-        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.getkeepsafe.relinker-relinker-1.2.2_396619e3f6aaced25aa5580630308459ad6e5a7f.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="9935891f23923f39d002087085d9696568a9f657">
         <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_34921f7627672d3fc19bdb7912c8f2043111d620.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/Users/qiyue/GitProject/S-MVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_d20d9e250721460ee33144bafb45d33b10413105.jar" />
     </item>
     <item
         is-multidex="false"

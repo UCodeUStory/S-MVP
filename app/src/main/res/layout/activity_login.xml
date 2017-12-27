@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_height="match_parent"
     tools:context="com.wangpos.s_mvp.ui.login.LoginActivity">
 
     <EditText
          android:id="@+id/etuserName"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/etpassword"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_below="@+id/etuserName"
         android:layout_marginTop="30dp"
@@ -20,7 +24,7 @@
 
     <Button
         android:layout_width="200dp"
-        android:text="登陆"
+        android:text="测试登陆"
         android:layout_below="@+id/etpassword"
         android:textSize="20sp"
         android:gravity="center"
@@ -28,4 +32,15 @@
         android:layout_marginTop="30dp"
         android:id="@+id/login"
         android:layout_height="50dp" />
-</RelativeLayout>
+    <Button
+        android:layout_width="200dp"
+        android:text="测试SmartTask"
+
+        android:layout_below="@+id/etpassword"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/smartTask"
+        android:layout_height="50dp" />
+</LinearLayout>
