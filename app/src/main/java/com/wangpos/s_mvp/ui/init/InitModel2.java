@@ -1,9 +1,8 @@
 package com.wangpos.s_mvp.ui.init;
 
 import android.os.Handler;
-import android.widget.Toast;
 
-import com.wangpos.s_mvp.base.util.SyncTaskManager;
+import com.wangpos.s_mvp.base.task.SmartTaskManager;
 
 /**
  * Created by qiyue on 2018/1/5.
@@ -24,20 +23,20 @@ public class InitModel2 {
                 super.run();
 
                 /**
-                 * 模拟2秒请求
+                 * 模拟1秒请求
                  *
                  *
                  */
 
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        SyncTaskManager.as().get("init").onFinish("Hello");
+                        SmartTaskManager.as().getSyncTask("init").onFinish("Hello");
                     }
                 });
             }
@@ -65,7 +64,7 @@ public class InitModel2 {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        SyncTaskManager.as().get("init").onFinish(param+" World");
+                        SmartTaskManager.as().getSyncTask("init").onFinish(param+" World");
                     }
                 });
             }
@@ -79,13 +78,13 @@ public class InitModel2 {
             public void run() {
                 super.run();
                 /**
-                 * 模拟2秒请求
+                 * 模拟1秒请求
                  *
                  *
                  */
 
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

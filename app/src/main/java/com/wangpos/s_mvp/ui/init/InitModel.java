@@ -1,6 +1,6 @@
 package com.wangpos.s_mvp.ui.init;
 
-import com.wangpos.s_mvp.base.util.SmartTaskManager;
+import com.wangpos.s_mvp.base.task.SmartTaskManager;
 
 /**
  * Created by qiyue on 2017/12/27.
@@ -20,11 +20,11 @@ public class InitModel {
                 super.run();
 
                 try {
-                    sleep(5000);
+                    sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                SmartTaskManager.as().get("initTask").finish();
+                SmartTaskManager.as().getAsyncTask("initTask").onFinish();
             }
         };
         t.start();
@@ -38,11 +38,11 @@ public class InitModel {
                 super.run();
 
                 try {
-                    sleep(5000);
+                    sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                SmartTaskManager.as().get("initTask").finish();
+                SmartTaskManager.as().getAsyncTask("initTask").onFinish();
             }
         };
         t.start();

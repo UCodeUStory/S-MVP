@@ -2,8 +2,6 @@ package com.wangpos.s_mvp.ui.login;
 
 import com.example.InstanceFactory;
 import com.example.aspectj.TimeLog;
-import com.wangpos.s_mvp.base.BasePresenter;
-import com.wangpos.s_mvp.base.util.SmartTaskManager;
 
 /**
  * Created by qiyue on 2017/10/11.

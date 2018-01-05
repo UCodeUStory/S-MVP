@@ -1,8 +1,5 @@
 package com.wangpos.s_mvp.ui.login;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,10 +7,9 @@ import android.widget.Toast;
 import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
-import com.wangpos.s_mvp.base.util.InjectView;
-import com.wangpos.s_mvp.base.util.SmartTaskManager;
-import com.wangpos.s_mvp.base.util.SyncTask;
-import com.wangpos.s_mvp.base.util.SyncTaskManager;
+import com.wangpos.s_mvp.base.task.SmartTaskManager;
+import com.wangpos.s_mvp.base.task.SyncRunnable;
+import com.wangpos.s_mvp.base.task.SyncTask;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.init.InitModel;
 import com.wangpos.s_mvp.ui.init.InitModel2;
@@ -28,7 +24,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public EditText etPassword;
 
     public SmartTaskManager smartTaskManager;
-    public SyncTaskManager syncTaskManager;
 
 
     @Override
@@ -43,17 +38,17 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         $(R.id.login).setOnClickListener(this);
         $(R.id.smartTask).setOnClickListener(this);
         $(R.id.syncTask).setOnClickListener(this);
+
         smartTaskManager = SmartTaskManager.as();
-        syncTaskManager = SyncTaskManager.as();
         smartTaskManager.put("initTask",2);
-        smartTaskManager.get("initTask").toEnd(new Runnable() {
+        smartTaskManager.put("init");
+        smartTaskManager.getAsyncTask("initTask").toEnd(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(getApplicationContext(),"页面全部初始化完成",Toast.LENGTH_SHORT).show();
             }
         });
 
-        syncTaskManager.put("init");
 
 
     }
@@ -87,29 +82,15 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 break;
             case R.id.syncTask:
                 InitModel2 initModel2 = new InitModel2();
-                SyncTask stk = syncTaskManager.get("init");
-
-                stk.onNext(new SyncTask.SyncRunnable() {
+                SyncTask stk = smartTaskManager.getSyncTask("init");
+                stk.onNext(obj -> initModel2.request_1())
+                        .onNext(obj -> initModel2.request_2((String)obj))
+                        .onNext(obj -> initModel2.request_3((String) obj, new InitModel2.OnRequestListener() {
                     @Override
-                    public void run(Object obj) {
-                        initModel2.request_1();
+                    public void onSuccess(String msg) {
+                        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
                     }
-                }).onNext(new SyncTask.SyncRunnable() {
-                    @Override
-                    public void run(Object obj) {
-                        initModel2.request_2((String)obj);
-                    }
-                }).onNext(new SyncTask.SyncRunnable() {
-                    @Override
-                    public void run(Object obj) {
-                        initModel2.request_3((String) obj, new InitModel2.OnRequestListener() {
-                            @Override
-                            public void onSuccess(String msg) {
-                                Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                });
+                }));
 
                 stk.start();
                 break;
@@ -120,5 +101,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     protected void onDestroy() {
         super.onDestroy();
         smartTaskManager.remove("initTask");
+        smartTaskManager.remove("init");
     }
 }
