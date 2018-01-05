@@ -32,15 +32,45 @@ MVP 继续解耦
 
 - 10.通常我们一个页面需要不止一个请求，并且这些请求是异步的，这样可以得到很好的用户体验，往往我们还需要，等待这些请求都完成后做一些处理
 
-   我们这里封装一个SmartTask
+   这里封装一个Asynctask
    
    - 使用方法：
       - - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
-      - - 2.其他文件通过key获取SmartTask对象，在各线程执行完后调用SmartTask对象一个finish()方法
+      - - 2.其他文件通过key获取Asynctask对象，在各线程执行完后调用Asynctask对象一个onFinish()方法
       - - 3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
       - - 4.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
-  
+   - 例子
+          
+           smartTaskManager = SmartTaskManager.as();
+           smartTaskManager.put("initTask",2);
+           smartTaskManager.put("init");
+           smartTaskManager.getAsyncTask("initTask").toEnd(new Runnable() {
+               @Override
+               public void run() {
+                   Toast.makeText(getApplicationContext(),"页面全部初始化完成",Toast.LENGTH_SHORT).show();
+               }
+           });
+           
+- 11.业务中我们需要一个请求后调用另一个请求再调用其他请求，这种串行请求我们通常使用嵌套的形式，缺点很不好维护，如果要有需求要改变顺序，那需要改动很多的代码
+   
+   于是封装一个SyncTask
+   
+   - 使用方法：
+     - - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+     - - 2.其他文件通过key获取Synctask对象，在各线程执行完后调用Synctask对象一个onFinish(param)方法传递参数给下一个
+     - - 3.通过这个Synctask对象我们调用onNext，添加任务，添加的任务顺序，就是执行顺序
+     - - 4.调用start方法开始执行请求
+     - - 5.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
+   
+   - 例子：
+   
+         SyncTask stk = smartTaskManager.getSyncTask("init");
+         stk.onNext(obj -> initModel2.request_1())
+                 .onNext(obj -> initModel2.request_2((String)obj))
+                 .onNext(obj -> initModel2.request_3((String) obj, msg -> Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show()));
 
+         stk.start();
+     
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
 - [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
 - [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)

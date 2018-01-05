@@ -85,12 +85,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 SyncTask stk = smartTaskManager.getSyncTask("init");
                 stk.onNext(obj -> initModel2.request_1())
                         .onNext(obj -> initModel2.request_2((String)obj))
-                        .onNext(obj -> initModel2.request_3((String) obj, new InitModel2.OnRequestListener() {
-                    @Override
-                    public void onSuccess(String msg) {
-                        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
-                    }
-                }));
+                        .onNext(obj -> initModel2.request_3((String) obj, msg -> Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show()));
 
                 stk.start();
                 break;
