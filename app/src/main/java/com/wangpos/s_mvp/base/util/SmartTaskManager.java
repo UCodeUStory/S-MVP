@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 /**
  * Created by qiyue on 2017/12/22.
+ *
  */
 
 public class SmartTaskManager {
@@ -16,9 +17,7 @@ public class SmartTaskManager {
 
     private static volatile SmartTaskManager smartTaskManager;
 
-    /**
-     * 最大同步的线程流数
-     */
+
     private SmartTaskManager() {
         this.stmap = new HashMap<>();
     }
@@ -75,4 +74,7 @@ public class SmartTaskManager {
             stmap.clear();
         }
     }
+
+
+
 }

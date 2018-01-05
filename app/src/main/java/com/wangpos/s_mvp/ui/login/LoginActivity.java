@@ -12,8 +12,11 @@ import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
 import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.util.SmartTaskManager;
+import com.wangpos.s_mvp.base.util.SyncTask;
+import com.wangpos.s_mvp.base.util.SyncTaskManager;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.init.InitModel;
+import com.wangpos.s_mvp.ui.init.InitModel2;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
@@ -25,6 +28,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public EditText etPassword;
 
     public SmartTaskManager smartTaskManager;
+    public SyncTaskManager syncTaskManager;
 
 
     @Override
@@ -38,7 +42,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         // etPassword = $(R.id.etpassword);
         $(R.id.login).setOnClickListener(this);
         $(R.id.smartTask).setOnClickListener(this);
+        $(R.id.syncTask).setOnClickListener(this);
         smartTaskManager = SmartTaskManager.as();
+        syncTaskManager = SyncTaskManager.as();
         smartTaskManager.put("initTask",2);
         smartTaskManager.get("initTask").toEnd(new Runnable() {
             @Override
@@ -47,6 +53,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             }
         });
 
+        syncTaskManager.put("init");
 
 
     }
@@ -77,6 +84,34 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 InitModel initModel = new InitModel();
                 initModel.init();
                 initModel.otherInit();
+                break;
+            case R.id.syncTask:
+                InitModel2 initModel2 = new InitModel2();
+                SyncTask stk = syncTaskManager.get("init");
+
+                stk.onNext(new SyncTask.SyncRunnable() {
+                    @Override
+                    public void run(Object obj) {
+                        initModel2.request_1();
+                    }
+                }).onNext(new SyncTask.SyncRunnable() {
+                    @Override
+                    public void run(Object obj) {
+                        initModel2.request_2((String)obj);
+                    }
+                }).onNext(new SyncTask.SyncRunnable() {
+                    @Override
+                    public void run(Object obj) {
+                        initModel2.request_3((String) obj, new InitModel2.OnRequestListener() {
+                            @Override
+                            public void onSuccess(String msg) {
+                                Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+                stk.start();
                 break;
         }
     }
