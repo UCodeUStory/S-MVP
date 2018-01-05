@@ -44,9 +44,9 @@ public class SyncTask {
         return this;
     }
 
-    public void onFinish(Object obj){
+    public void onFinish(Object param){
         Message msg = new Message();
-        msg.obj = obj;
+        msg.obj = param;
         mHandler.sendMessage(msg);
     }
 

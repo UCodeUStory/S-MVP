@@ -50,7 +50,7 @@ MVP 继续解耦
                    Toast.makeText(getApplicationContext(),"页面全部初始化完成",Toast.LENGTH_SHORT).show();
                }
            });
-           
+     
 - 11.业务中我们需要一个请求后调用另一个请求再调用其他请求，这种串行请求我们通常使用嵌套的形式，缺点很不好维护，如果要有需求要改变顺序，那需要改动很多的代码
    
    于是封装一个SyncTask
@@ -70,7 +70,9 @@ MVP 继续解耦
                  .onNext(obj -> initModel2.request_3((String) obj, msg -> Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show()));
 
          stk.start();
-     
+   #### SmartTask结构
+   ![image](https://github.com/UCodeUStory/S-MVP/blob/master/smartManager.png)
+   
 - [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
 - [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
 - [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)
