@@ -74,11 +74,11 @@ MVP 继续解耦
    ![image](https://github.com/UCodeUStory/S-MVP/blob/master/smartManager.png)
 
 
-- [组件化开发框架请点这里](https://github.com/UCodeUStory/ComponentDevelopment)
-- [插件化开发框架请点这里](https://github.com/UCodeUStory/AndroidPluginFramework)
-- [Gradle插件开发请点这里](https://github.com/UCodeUStory/GradlePlugin)
-- [Tinker热修复例子请点这里](https://github.com/UCodeUStory/TinkerDemo)
-- [事件状态机处理请点这里](https://github.com/UCodeUStory/StateMachine)
+- [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)
+- [插件化开发框架](https://github.com/UCodeUStory/AndroidPluginFramework)
+- [Gradle插件开发](https://github.com/UCodeUStory/GradlePlugin)
+- [Tinker热修复例子](https://github.com/UCodeUStory/TinkerDemo)
+- [事件状态机处理](https://github.com/UCodeUStory/StateMachine)
 - [MVVM设计](https://github.com/UCodeUStory/MVVM)
 
 ****
