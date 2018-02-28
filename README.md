@@ -30,9 +30,9 @@ MVP 继续解耦
 
 - #### 6.添加登陆缓存切片用来检测是否登陆
 
-- #### 7.添加异常捕获，打印，保证程序不崩溃*=
+- #### 7.添加异常捕获，打印，保证程序不崩溃
 
-- #### 8.自定义BindView框架，通过@$(R.id.abc)作用在public类型的变量即可*=
+- #### 8.自定义BindView框架，通过@$(R.id.abc)作用在public类型的变量即可
 
 - #### 9.通过javassist修改字节码的方式，可以生成类，也可以在某些特定方法注入代码，在保证不修改源码的情况，完成aop，避免代码碎片化
 
@@ -41,10 +41,10 @@ MVP 继续解耦
    这里封装一个Asynctask
    
    - 使用方法：
-      - - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
-      - - 2.其他文件通过key获取Asynctask对象，在各线程执行完后调用Asynctask对象一个onFinish()方法
-      - - 3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
-      - - 4.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
+      - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+      - 2.其他文件通过key获取Asynctask对象，在各线程执行完后调用Asynctask对象一个onFinish()方法
+      - 3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
+      - 4.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
    - 例子
           
            smartTaskManager = SmartTaskManager.as();
