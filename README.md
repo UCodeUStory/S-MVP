@@ -8,6 +8,8 @@ MVP 继续解耦
 
 -  **MVP时代**：在MVP里，Presenter完全把Model和View进行了分离，主要的程序逻辑在Presenter里实现。而且，Presenter与具体的View是没有直接关联的，而是通过定义好的接口进行交互（单独测试时我们只需要按照接口传递参数即可），从而使得在变更View时候可以保持Presenter的不变，即重用！ 不仅如此，我们还可以编写测试用的View，模拟用户的各种操作，从而实现对Presenter的测试--而不需要使用自动化的测试工具
 
+- **MVP解耦View时代**：以往我们的V层是一个Activity或Frament实现，大多数情况下，我们的一个页面布局很复杂,包含很多个ViewGroup,而不是简单的一个ListView、GridView，按照之前的会发现一个Activity中有很多Presenter来维护和很多的回调，有时我们只需要改动其中的一个ViewGroup内容逻辑，却不能很好的区分，所以我们要让每个View或者ViewGroup实现MVP，这样不管这个View放在哪(Activity/Fragment/ViewGroup)都能够很好的移植，并且修改某一个的时候也会互相不影响，所以通过LifeCycle和组件化View可以很好解决上面问题
+
 ### 内容
 
 - #### 1.通过模块化减少了类的创建
@@ -78,8 +80,24 @@ MVP 继续解耦
          stk.start();
    #### SmartTask结构
    ![image](https://github.com/UCodeUStory/S-MVP/blob/master/smartManager.png)
-
-
+   
+- #### 12.添加LifeCycle实现组件化View开发
+    1. moudle下build.gradle 添加：
+   
+              compile "android.arch.lifecycle:runtime:1.0.0-alpha4"
+              compile "android.arch.lifecycle:extensions:1.0.0-alpha4"
+              annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha4"
+              
+    2. 项目工程下build.gradle 添加：
+   
+           allprojects {
+               repositories {
+                   jcenter()
+                   google()
+                   mavenCentral()
+               }
+           }
+           
 - [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)
 - [插件化开发框架](https://github.com/UCodeUStory/AndroidPluginFramework)
 - [Gradle插件开发](https://github.com/UCodeUStory/GradlePlugin)
