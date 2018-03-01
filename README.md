@@ -97,13 +97,13 @@ MVP 继续解耦
                    mavenCentral()
                }
            }
-           
-- [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)
-- [插件化开发框架](https://github.com/UCodeUStory/AndroidPluginFramework)
-- [Gradle插件开发](https://github.com/UCodeUStory/GradlePlugin)
-- [Tinker热修复例子](https://github.com/UCodeUStory/TinkerDemo)
-- [事件状态机处理](https://github.com/UCodeUStory/StateMachine)
-- [MVVM设计](https://github.com/UCodeUStory/MVVM)
+### 我的相关技术仓库
+
+Repository | Repository | Repository | Repository
+---|---|---|---|---
+[组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)  | [插件化开发框架](https://github.com/UCodeUStory/AndroidPluginFramework) | [Gradle插件开发](https://github.com/UCodeUStory/GradlePlugin)|[Tinker热修复例子](https://github.com/UCodeUStory/TinkerDemo)
+[事件状态机处理](https://github.com/UCodeUStory/StateMachine) | [MVVM设计](https://github.com/UCodeUStory/MVVM)
+
 
 ****
 ### **框架待优化**
