@@ -43,10 +43,10 @@ MVP 继续解耦
    这里封装一个Asynctask
    
    - 使用方法：
-      - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
-      - 2.其他文件通过key获取Asynctask对象，在各线程执行完后调用Asynctask对象一个onFinish()方法
-      - 3.SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
-      - 4.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
+      1. 创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+      2. 其他文件通过key获取Asynctask对象，在各线程执行完后调用Asynctask对象一个onFinish()方法
+      3. SmartTaskManager获取调用toEnd传递一个Runnable，当两个线程执行完后就会回调这个方法
+      4. 最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
    - 例子
           
            smartTaskManager = SmartTaskManager.as();
@@ -64,11 +64,11 @@ MVP 继续解耦
    封装一个SyncTask
    
    - 使用方法：
-     - 1.创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
-     - 2.其他文件通过key获取Synctask对象，在各线程执行完后调用Synctask对象一个onFinish(param)方法传递参数给下一个
-     - 3.通过这个Synctask对象我们调用onNext，添加任务，添加的任务顺序，就是执行顺序
-     - 4.调用start方法开始执行请求
-     - 5.最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
+     1. 创建一个SmartTaskManager,调用put方法传递一个要同步的线程数量，和指定一个key
+     2. 其他文件通过key获取Synctask对象，在各线程执行完后调用Synctask对象一个onFinish(param)方法传递参数给下一个
+     3. 通过这个Synctask对象我们调用onNext，添加任务，添加的任务顺序，就是执行顺序
+     4. 调用start方法开始执行请求
+     5. 最后页面退出的时候移除这个task,SmartTaskManager.remove(key);
    
    - 例子：
    
