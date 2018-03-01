@@ -9,7 +9,6 @@ import com.wangpos.s_mvp.base.util.SpUtil;
 
 import java.util.Stack;
 
-import io.realm.Realm;
 
 /**
  * Created by qiyue on 2017/10/11.
