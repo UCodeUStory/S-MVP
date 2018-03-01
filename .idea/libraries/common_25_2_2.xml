@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="common-25.2.2">
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/common/25.2.2/common-25.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/25.2.2/e5edb7d027c8fc9316b750f9e52d51435d60b3da/common-25.2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

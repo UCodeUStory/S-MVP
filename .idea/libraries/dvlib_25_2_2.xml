@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="dvlib-25.2.2">
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/dvlib/25.2.2/dvlib-25.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/25.2.2/13464959a61a5ac4327ea27cc9ca21d2091bca28/dvlib-25.2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

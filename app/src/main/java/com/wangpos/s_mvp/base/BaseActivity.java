@@ -2,6 +2,7 @@ package com.wangpos.s_mvp.base;
 
 
 
+import com.wangpos.s_mvp.base.task.SmartTaskManager;
 import com.wangpos.s_mvp.base.util.InstanceUtil;
 
 import java.lang.reflect.ParameterizedType;
@@ -13,7 +14,7 @@ import java.lang.reflect.ParameterizedType;
 @SuppressWarnings("unchecked")
 public abstract class BaseActivity<P extends BasePresenter> extends BaseAppCompatActivity {
     public P mPresenter;
-
+    protected SmartTaskManager smartTaskManager;
     @Override
     protected void initPresenter() {
         if (this instanceof BaseView &&

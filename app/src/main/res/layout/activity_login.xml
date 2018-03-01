@@ -53,4 +53,15 @@
         android:layout_marginTop="30dp"
         android:id="@+id/syncTask"
         android:layout_height="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="通过LifeCycle实现View组件化"
+        android:layout_below="@+id/etpassword"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/test_lifeCycle"
+        android:layout_height="50dp" />
 </LinearLayout>

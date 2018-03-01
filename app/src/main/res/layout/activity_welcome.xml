@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.wangpos.s_mvp.ui.welcome.HeaderView
+        android:id="@+id/life_linearlayout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="match_parent"
+            android:src="@drawable/header"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#FFF"
+            android:text="加载中....3"
+            />
+    </com.wangpos.s_mvp.ui.welcome.HeaderView>
+
+    <com.wangpos.s_mvp.ui.welcome.MenuView
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="match_parent"
+            android:src="@drawable/header"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/menu_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#FFF"
+            android:text="加载中....4"
+            />
+    </com.wangpos.s_mvp.ui.welcome.MenuView>
+
+    <com.wangpos.s_mvp.ui.welcome.BodyView
+        android:id="@+id/body_view"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/tv_footer"
+            android:textColor="#f74e05"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/test_menu"
+            android:layout_width="match_parent"
+            android:text="进入测试菜单"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:background="#f5f2f2"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_height="50dp" />
+    </com.wangpos.s_mvp.ui.welcome.BodyView>
+
+
+</LinearLayout>

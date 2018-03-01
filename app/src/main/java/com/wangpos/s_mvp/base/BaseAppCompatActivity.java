@@ -2,6 +2,7 @@ package com.wangpos.s_mvp.base;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.wangpos.s_mvp.R;
+import com.wangpos.s_mvp.base.task.SmartTaskManager;
 import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.util.MPermissionUtils;
 import com.wangpos.s_mvp.base.util.SpUtil;
+import com.wangpos.s_mvp.ui.welcome.WelcomeActivity;
 
 
 public abstract class BaseAppCompatActivity extends AppCompatActivity implements View.OnClickListener{
@@ -23,6 +26,8 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,11 +39,20 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         mContext = this;
         initPresenter();
         initView();
+
     }
 
     protected void initPresenter() {
     }
 
+
+    /**
+     * 默认启动,不传递任何参数
+     * @param ActivityClass
+     */
+    protected void launcher(Class<?> ActivityClass) {
+        startActivity(new Intent(this,ActivityClass));
+    }
 
 
     @SuppressWarnings("unchecked")
@@ -49,7 +63,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
     public void reload() {
         AppCompatDelegate.setDefaultNightMode(SpUtil.isNight() ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
-        getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
+//        getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
         recreate();
     }
 

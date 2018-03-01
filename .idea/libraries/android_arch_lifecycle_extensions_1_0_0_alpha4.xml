@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android.arch.lifecycle:extensions-1.0.0-alpha4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extensions-1.0.0-alpha4.aar/df40107dc8cd21fbc105b31757dbe860/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extensions-1.0.0-alpha4.aar/df40107dc8cd21fbc105b31757dbe860/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/extensions/1.0.0-alpha4/921c2fe96bcb77a28302c47f00466ce5efc447dc/extensions-1.0.0-alpha4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

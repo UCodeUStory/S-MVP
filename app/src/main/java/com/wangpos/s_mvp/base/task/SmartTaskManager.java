@@ -1,5 +1,7 @@
 package com.wangpos.s_mvp.base.task;
 
+import android.util.Log;
+
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 
@@ -10,12 +12,10 @@ import java.util.HashMap;
 
 public class SmartTaskManager {
 
-    /**
-     * 这里的SmartTask 必须要有一个强应用，引用他，否则，就会被回收
-     */
-    HashMap<String, SoftReference<Asynctask>> stmap;
 
-    HashMap<String, SoftReference<SyncTask>> syncTaskMap;
+    HashMap<String, Asynctask> stmap;
+
+    HashMap<String, SyncTask> syncTaskMap;
 
     private static volatile SmartTaskManager smartTaskManager;
 
@@ -49,7 +49,7 @@ public class SmartTaskManager {
 
         synchronized (stmap) {
             Asynctask smartTask = Asynctask.newInstance(count);
-            stmap.put(key,new SoftReference<Asynctask>(smartTask));
+            stmap.put(key,smartTask);
             return smartTask;
         }
 
@@ -58,7 +58,7 @@ public class SmartTaskManager {
     public SyncTask put(String tag){
         synchronized(syncTaskMap){
             SyncTask syncTask = new SyncTask();
-            syncTaskMap.put(tag,new SoftReference<SyncTask>(syncTask));
+            syncTaskMap.put(tag,syncTask);
             return syncTask;
         }
 
@@ -67,7 +67,12 @@ public class SmartTaskManager {
 
     public Asynctask getAsyncTask(String key){
         synchronized (stmap) {
-            Asynctask smartTask = stmap.get(key).get();
+//            for (String s : stmap.keySet()) {
+//
+//                Log.i("info","key="+s);
+//
+//            }
+            Asynctask smartTask = stmap.get(key);
             return smartTask;
         }
     }
@@ -75,7 +80,7 @@ public class SmartTaskManager {
 
     public SyncTask getSyncTask(String tag){
         synchronized (syncTaskMap){
-            SyncTask syncTask = syncTaskMap.get(tag).get();
+            SyncTask syncTask = syncTaskMap.get(tag);
             return syncTask;
         }
 
@@ -88,6 +93,7 @@ public class SmartTaskManager {
     public void remove(String key){
         synchronized (stmap){
             stmap.remove(key);
+            Log.i("info",""+toString());
         }
         synchronized (syncTaskMap){
             syncTaskMap.remove(key);
@@ -104,5 +110,17 @@ public class SmartTaskManager {
     }
 
 
+    public int getSize(){
+        return stmap.size();
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (String s : stmap.keySet()) {
+            sb.append("\n");
+            sb.append(s);
+        }
+        return sb.toString();
+    }
 }

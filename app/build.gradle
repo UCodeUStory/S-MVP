@@ -47,13 +47,18 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+//    compile 'com.android.support:appcompat-v7:26.0.0-beta1'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
     testCompile 'junit:junit:4.12'
 
     annotationProcessor project(':libcomplier')
 
     compile project(path:  ':libannotation')
 
+
+    compile "android.arch.lifecycle:runtime:1.0.0-alpha4"
+    compile "android.arch.lifecycle:extensions:1.0.0-alpha4"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha4"
 
 }
 

@@ -13,6 +13,7 @@ import com.wangpos.s_mvp.base.task.SyncTask;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.init.InitModel;
 import com.wangpos.s_mvp.ui.init.InitModel2;
+import com.wangpos.s_mvp.ui.welcome.WelcomeActivity;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
@@ -23,7 +24,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @$(R.id.etpassword)
     public EditText etPassword;
 
-    public SmartTaskManager smartTaskManager;
 
 
     @Override
@@ -38,6 +38,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         $(R.id.login).setOnClickListener(this);
         $(R.id.smartTask).setOnClickListener(this);
         $(R.id.syncTask).setOnClickListener(this);
+//        $(R.id.test_lifeCycle).setOnClickListener(this);
 
         smartTaskManager = SmartTaskManager.as();
         smartTaskManager.put("initTask",2);
@@ -89,8 +90,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
                 stk.start();
                 break;
+            case R.id.test_lifeCycle:
+//                launcher(WelcomeActivity.class);
+                break;
         }
     }
+
+
 
     @Override
     protected void onDestroy() {
