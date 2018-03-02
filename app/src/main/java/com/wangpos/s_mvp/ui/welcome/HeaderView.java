@@ -1,8 +1,6 @@
 package com.wangpos.s_mvp.ui.welcome;
 
 import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -10,11 +8,12 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.task.Asynctask;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
+import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.widget.LifeFrameLayout;
-import com.wangpos.s_mvp.base.widget.LifeLinearLayout;
 
 import android.os.Handler;
 
@@ -26,9 +25,10 @@ public class HeaderView extends LifeFrameLayout implements WelcomeContract.View 
 
     private WelcomeContract.Presenter mPresenter;
 
-    private ImageView imageView;
-
-    private TextView tvTime;
+    @$(R.id.iv_header)
+    public ImageView imageView;
+    @$(R.id.time)
+    public TextView tvTime;
 
     private Handler mHandler;
 
@@ -49,14 +49,14 @@ public class HeaderView extends LifeFrameLayout implements WelcomeContract.View 
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
+        InjectView.bind(this);
         //notice 初始化presenter
         Log.i("info","MyObserver:ON_CREATE");
         smartTaskManager = SmartTaskManager.as();
         mPresenter = new WelcomePresenter();
         mPresenter.onAttachedView(this);
         mPresenter.loadHeader();
-        imageView = findViewById(R.id.iv_header);
-        tvTime = findViewById(R.id.time);
+
         final int[] count = {3};
         mHandler = new Handler(){
             @Override
@@ -73,6 +73,13 @@ public class HeaderView extends LifeFrameLayout implements WelcomeContract.View 
         };
         mHandler.sendEmptyMessage(0);
 
+    }
+
+
+    @Override
+    public void ON_DESTROY() {
+        super.ON_DESTROY();
+        InjectView.unbind(this);
     }
 
     @Override

@@ -9,10 +9,11 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
+import com.wangpos.s_mvp.base.util.InjectView;
 import com.wangpos.s_mvp.base.widget.LifeFrameLayout;
-import com.wangpos.s_mvp.base.widget.LifeLinearLayout;
 
 /**
  * Created by qiyue on 2018/2/28.
@@ -23,9 +24,10 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
 
     private WelcomeContract.Presenter mPresenter;
 
-    private ImageView imageView;
-
-    private TextView tvTime;
+    @$(R.id.iv_menu)
+    public ImageView imageView;
+    @$(R.id.menu_time)
+    public TextView tvTime;
 
     private Handler mHandler;
 
@@ -49,12 +51,13 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
     public void ON_CREATE() {
         super.ON_CREATE();
         //notice 初始化presenter
+        InjectView.bind(this);
         smartTaskManager = SmartTaskManager.as();
         mPresenter = new WelcomePresenter();
         mPresenter.onAttachedView(this);
         mPresenter.loadMenu();
-        imageView = findViewById(R.id.iv_menu);
-        tvTime = findViewById(R.id.menu_time);
+//        imageView = findViewById(R.id.iv_menu);
+//        tvTime = findViewById(R.id.menu_time);
         final int[] count = {4};
         mHandler = new Handler(){
             @Override
@@ -82,5 +85,11 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
     public void onLoadMenuSuccess(int id) {
         imageView.setImageResource(id);
         smartTaskManager.getAsyncTask("initPage").onFinish();
+    }
+
+    @Override
+    public void ON_DESTROY() {
+        super.ON_DESTROY();
+        InjectView.unbind(this);
     }
 }
