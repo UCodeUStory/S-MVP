@@ -116,20 +116,13 @@ MVP 继续解耦
 
 2.EventBus,otto都可以考虑使用
 
-4.Gradle, Transfrom, Task, Plugin 区别
+3.使用Javassist注入字节码,这是一个很好的字节码编辑工具，提供在JVM运行期前修改的api
 
-5.使用Javassist注入字节码,这是一个很好的字节码编辑工具，提供在JVM运行期前修改的api
-    
-    Javassist是一个开源的分析、编辑和创建Java字节码的类库。是由东京工业大学的数学和计算机科学系的 Shigeru Chiba （千叶
-    滋）所创建的。它已加入了开放源代码JBoss 应用服务器项目,通过使用Javassist对字节码操作为JBoss实现动态AOP框架。
-6.使用Javassist实现一个热修复框架
+4.路由实现简单的跳转，路由器也是用来解耦的，增加后台可配置性
 
-    
-7.路由实现简单的跳转，路由器也是用来解耦的，增加后台可配置性
+5.网络框架选择,封装一个公共的入口，http ,httpPost, httpGet,httpPostMap,httpGetMap,  HttpManager
 
-8.网络框架选择,封装一个公共的入口，http ,httpPost, httpGet,httpPostMap,httpGetMap,  HttpManager
-
-9.添加全局的异常处理,保存到指定目录下文件，每次生成新的文件，通过LRU控制数量和删除策略
+6.添加全局的异常处理,保存到指定目录下文件，每次生成新的文件，通过LRU控制数量和删除策略
 
 11.添加6.0权限
 
