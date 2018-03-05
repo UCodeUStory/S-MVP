@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d6980ba-7d71-43b0-a7c1-c896a2b690d3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="S-MVP.iws" />
@@ -43,8 +44,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="162">
-                <caret line="118" column="2" lean-forward="false" selection-start-line="118" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
+              <first_editor relative-caret-position="464">
+                <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -2885,7 +2886,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520174621345" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520246633618" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2933,7 +2934,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520174621345" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520246633618" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3095,7 +3096,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520174621346" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520246633618" />
       </method>
     </configuration>
     <list size="1">
@@ -3594,8 +3595,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="162">
-            <caret line="118" column="2" lean-forward="false" selection-start-line="118" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
+          <first_editor relative-caret-position="464">
+            <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />
