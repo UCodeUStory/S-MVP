@@ -112,8 +112,6 @@ MVP 继续解耦
 ### **框架待优化**
 
 
-1.查找资源可以使用ButterKnife，可以集成DataBind可以考虑
-
 2.EventBus,otto都可以考虑使用
 
 3.使用Javassist注入字节码,这是一个很好的字节码编辑工具，提供在JVM运行期前修改的api
