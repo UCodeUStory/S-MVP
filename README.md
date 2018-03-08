@@ -119,8 +119,6 @@ MVP 继续解耦
 
 5.网络框架选择,封装一个公共的入口，http ,httpPost, httpGet,httpPostMap,httpGetMap,  HttpManager
 
-6.添加全局的异常处理,保存到指定目录下文件，每次生成新的文件，通过LRU控制数量和删除策略
-
 7.添加6.0权限
 
 8.添加日志缓存框架

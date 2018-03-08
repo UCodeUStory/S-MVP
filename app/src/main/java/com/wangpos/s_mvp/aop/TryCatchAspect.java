@@ -38,7 +38,7 @@ public class TryCatchAspect {
             return result;
         }catch (Exception e){
             e.printStackTrace();
-            LogUtils.i(TAG, ( key + joinPoint.getArgs().toString() +"\n"+"e="+e.toString()));
+            LogUtils.e(TAG, ( key + joinPoint.getArgs().toString() +"\n"+"e="+e.toString()));
         }
 
         return null;
