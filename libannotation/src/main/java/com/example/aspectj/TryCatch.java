@@ -11,5 +11,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.CLASS)
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
-public @interface TryException {
+public @interface TryCatch {
 }

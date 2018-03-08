@@ -64,4 +64,15 @@
         android:layout_marginTop="30dp"
         android:id="@+id/test_lifeCycle"
         android:layout_height="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="模拟一个异常"
+        android:layout_below="@+id/etpassword"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/test_exception"
+        android:layout_height="50dp" />
 </LinearLayout>

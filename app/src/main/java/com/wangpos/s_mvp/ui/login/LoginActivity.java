@@ -4,16 +4,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.aspectj.TryCatch;
 import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
-import com.wangpos.s_mvp.base.task.SyncRunnable;
 import com.wangpos.s_mvp.base.task.SyncTask;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.init.InitModel;
 import com.wangpos.s_mvp.ui.init.InitModel2;
-import com.wangpos.s_mvp.ui.welcome.WelcomeActivity;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
@@ -38,6 +37,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         $(R.id.login).setOnClickListener(this);
         $(R.id.smartTask).setOnClickListener(this);
         $(R.id.syncTask).setOnClickListener(this);
+        $(R.id.test_exception).setOnClickListener(this);
 //        $(R.id.test_lifeCycle).setOnClickListener(this);
 
         smartTaskManager = SmartTaskManager.as();
@@ -93,9 +93,17 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             case R.id.test_lifeCycle:
 //                launcher(WelcomeActivity.class);
                 break;
+            case R.id.test_exception:
+                create_exception(1,"test");
+                break;
         }
     }
 
+    @TryCatch
+    private void create_exception(int a,String test) {
+        String nullStr = null;
+        nullStr.toString();
+    }
 
 
     @Override
