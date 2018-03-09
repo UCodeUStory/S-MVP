@@ -1,5 +1,7 @@
 package com.wangpos.s_mvp.ui.login;
 
+import android.Manifest;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
 import com.wangpos.s_mvp.base.task.SyncTask;
+import com.wangpos.s_mvp.base.util.MPermissionUtils;
 import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.init.InitModel;
 import com.wangpos.s_mvp.ui.init.InitModel2;
@@ -23,6 +26,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @$(R.id.etpassword)
     public EditText etPassword;
 
+    public final String TAG = LoginActivity.class.getSimpleName();
 
 
     @Override
@@ -50,6 +54,17 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             }
         });
 
+        MPermissionUtils.requestPermissionsResult(this, 101, new String[]{Manifest.permission_group.CALENDAR}, new MPermissionUtils.OnPermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Log.i(TAG,"Granted");
+            }
+
+            @Override
+            public void onPermissionDenied() {
+                Log.i(TAG,"onPermissionDenied");
+            }
+        });
 
 
     }
