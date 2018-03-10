@@ -119,8 +119,6 @@ MVP 继续解耦
 
 5.网络框架选择,封装一个公共的入口，http ,httpPost, httpGet,httpPostMap,httpGetMap,  HttpManager
 
-7.添加6.0权限
-
 8.添加日志缓存框架
 
 AOP技术常用在以下方面：
