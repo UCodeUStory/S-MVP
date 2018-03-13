@@ -15,3 +15,11 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class org.aspectj.** {
+*;
+}
+
+#-keep class com.wangpos.s_mvp.ui.login.LoginPresenter{
+#*;
+#}
+

@@ -27,7 +27,7 @@ android {
         }
 
         release {
-            buildConfigField ("boolean", "isTime", "false")
+            buildConfigField ("boolean", "isTime", "true")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
