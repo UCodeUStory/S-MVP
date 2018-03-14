@@ -19,7 +19,4 @@
 *;
 }
 
-#-keep class com.wangpos.s_mvp.ui.login.LoginPresenter{
-#*;
-#}
 

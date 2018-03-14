@@ -20,7 +20,10 @@ public class LoginPresenter extends LoginContract.Presenter {
         mModel.login(name, pass, new LoginContract.Model.OnLoginListener() {
             @Override
             public void onLoginSuccess() {
-                mView.loginSuccess();
+                //notice 防止页面关闭空指针
+                if (mView!=null) {
+                    mView.loginSuccess();
+                }
             }
 
             @Override
