@@ -117,7 +117,7 @@ MVP 继续解耦
 
 4.路由实现简单的跳转，路由器也是用来解耦的，增加后台可配置性
 
-5.网络框架选择,封装一个公共的入口，http ,httpPost, httpGet,httpPostMap,httpGetMap,  HttpManager
+5.网络框架选择,封装一个公共的入口  
 
 8.添加日志缓存框架
 
