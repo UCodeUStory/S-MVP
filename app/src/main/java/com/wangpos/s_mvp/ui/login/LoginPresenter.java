@@ -10,7 +10,7 @@ import com.example.aspectj.TimeLog;
 @InstanceFactory
 public class LoginPresenter extends LoginContract.Presenter {
 
-    public LoginPresenter(){
+    public LoginPresenter() {
         this.mModel = new LoginModel();
     }
 
@@ -21,7 +21,7 @@ public class LoginPresenter extends LoginContract.Presenter {
             @Override
             public void onLoginSuccess() {
                 //notice 防止页面关闭空指针
-                if (mView!=null) {
+                if (mView != null) {
                     mView.loginSuccess();
                 }
             }
