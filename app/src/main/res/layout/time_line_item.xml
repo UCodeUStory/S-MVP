@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/rly_left"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/lly_left"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_left_time"
+                android:layout_width="match_parent"
+                android:textSize="13sp"
+                android:text="2018/3/14"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_left_content"
+                android:layout_width="match_parent"
+                android:textColor="#333333"
+                android:textSize="15sp"
+                android:text="辣椒粉杰拉德街坊邻居阿道夫烂尾楼的书房里的房间里坚实的"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <com.wangpos.s_mvp.widget.TimeMarker
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        app:beginLine ="#16cfc9"
+        app:endLine ="#16cfc9"
+        android:paddingTop="37.5dp"
+        app:lineSize = "4dp"
+        app:marker = "@drawable/haha"
+        app:markerSize ="25dp"
+        android:layout_height="150dp" />
+
+    <RelativeLayout
+        android:id="@+id/rly_right"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/lly_right"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_right_time"
+                android:layout_width="match_parent"
+                android:textSize="13sp"
+                android:text="2018/3/14"
+                android:textColor="#00ff48"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_right_content"
+                android:layout_width="match_parent"
+                android:textColor="#333333"
+                android:textSize="15sp"
+                android:text="辣椒粉杰拉德街坊邻居阿道夫烂尾楼的书房里的房间里坚实的"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

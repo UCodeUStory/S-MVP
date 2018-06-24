@@ -15,7 +15,7 @@
         <activity android:name=".ui.welcome.WelcomeActivity">
 
         </activity>
-        <activity android:name=".ui.welcome.SpUpdateActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
