@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="l1_time">#FFF</color>
+    <color name="l1_content">#e1d9d9</color>
+
+    <color name="l2_time">#333333</color>
+    <color name="l2_content">#333333</color>
+
+    <color name="r1_time">#333333</color>
+    <color name="r1_content">#333333</color>
 </resources>

@@ -1,10 +1,12 @@
 package com.wangpos.s_mvp.adapter;
 
 import android.content.Context;
+import android.support.annotation.ColorRes;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -48,6 +50,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 
         holder.tvLeftTime.setText(datas.get(position).time);
+
         holder.tvLeftContent.setText(datas.get(position).content);
         holder.tvRightTime.setText(datas.get(position).time);
         holder.tvRightContent.setText(datas.get(position).content);
@@ -60,12 +63,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             int styleIndex = position/2;
             switch (styleIndex){
                 case 0:
+                    holder.tvLeftTime.setTextColor(getColor(R.color.l1_time));
+                    holder.tvLeftContent.setTextColor(getColor(R.color.l1_content));
                     holder.mleftBackground.setBackgroundResource(R.drawable.l1);
                     break;
                 case 1:
+                    holder.tvLeftTime.setTextColor(getColor(R.color.l1_time));
+                    holder.tvLeftContent.setTextColor(getColor(R.color.l1_content));
                     holder.mleftBackground.setBackgroundResource(R.drawable.l2);
                     break;
                 case 2:
+                    holder.tvLeftTime.setTextColor(getColor(R.color.l2_time));
+                    holder.tvLeftContent.setTextColor(getColor(R.color.l2_content));
                     holder.mleftBackground.setBackgroundResource(R.drawable.l3);
                     break;
 //                case 3:
@@ -73,26 +82,49 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 default:
                     holder.mleftBackground.setBackgroundResource(R.drawable.left);
                     break;
+
             }
+            TranslateAnimation animation = new TranslateAnimation(500.0f, 0.0f, 0.0f, 0.0f);
+            animation.setFillAfter(true);
+            animation.setDuration(800);
+            holder.mleftBackground.startAnimation(animation);
+
         }else{
             holder.mRlyRightCard.setVisibility(View.VISIBLE);
             holder.mRlyLeftCard.setVisibility(View.INVISIBLE);
             int styleIndex = (position+1)/2;
+            styleIndex = styleIndex%3;
             switch (styleIndex){
                 case 1:
+                    holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
+                    holder.tvRightContent.setTextColor(getColor(R.color.r1_content));
                     holder.mRightBackground.setBackgroundResource(R.drawable.r1);
                     break;
                 case 2:
+                    holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
+                    holder.tvRightContent.setTextColor(getColor(R.color.r1_content));
                     holder.mRightBackground.setBackgroundResource(R.drawable.r2);
                     break;
-                case 4:
+                case 0:
+                    holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
+                    holder.tvRightContent.setTextColor(getColor(R.color.r1_content));
                     holder.mRightBackground.setBackgroundResource(R.drawable.r3);
                     break;
                 default:
-                    holder.mRightBackground.setBackgroundResource(R.drawable.right);
+//                    holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
+//                    holder.tvRightContent.setTextColor(getColor(R.color.r1_content));
+//                    holder.mRightBackground.setBackgroundResource(R.drawable.right);
                     break;
             }
+            TranslateAnimation animation = new TranslateAnimation(-1000.0f, 0.0f, 0.0f, 0.0f);
+            animation.setFillAfter(true);
+            animation.setDuration(800);
+            holder.mRightBackground.startAnimation(animation);
         }
+    }
+
+    private int getColor(@ColorRes int colorId) {
+        return context.getResources().getColor(colorId);
     }
 
     @Override

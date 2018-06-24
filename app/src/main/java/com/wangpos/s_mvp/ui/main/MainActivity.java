@@ -17,6 +17,10 @@ import java.util.List;
 
 /**
  * Created by qiyue on 2018/6/24.
+ *
+ * 添加移出动画，
+ * 修改样式颜色
+ * 添加详情演示
  */
 
 public class MainActivity extends AppCompatActivity {
