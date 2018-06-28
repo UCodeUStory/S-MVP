@@ -1,8 +1,7 @@
 ## S-MVP
 
+![Language](https://img.shields.io/badge/language-Java-EE0000.svg)
 ![](https://img.shields.io/badge/QQ-1483888222-green.svg)
-![](https://img.shields.io/github/license/mashape/apistatus.svg)
-![](https://img.shields.io/badge/QQ-1483888222-ff69b4.svg)
 
 
 MVP 继续解耦
