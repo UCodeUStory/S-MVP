@@ -2,6 +2,8 @@
 
 ![Language](https://img.shields.io/badge/language-Java-EE0000.svg)
 ![](https://img.shields.io/badge/QQ-1483888222-green.svg)
+![SDK](https://img.shields.io/badge/SDK-14%2B-orange.svg) 
+[![License](https://img.shields.io/apm/l/vim-mode.svg)]()
 
 
 MVP 继续解耦
