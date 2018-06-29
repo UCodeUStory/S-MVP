@@ -1,4 +1,11 @@
 ## S-MVP
+
+![Language](https://img.shields.io/badge/language-Java-EE0000.svg)
+![](https://img.shields.io/badge/QQ-1483888222-green.svg)
+![SDK](https://img.shields.io/badge/SDK-14%2B-orange.svg) 
+[![License](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/UCodeUStory/S-MVP/blob/master/LICENSE)
+
+
 MVP 继续解耦
 
 ### 引言
@@ -10,6 +17,7 @@ MVP 继续解耦
 
 - **MVP解耦View时代**：以往我们的V层是一个Activity或Frament实现，大多数情况下，我们的一个页面布局很复杂,包含很多个ViewGroup,而不是简单的一个ListView、GridView，按照之前的会发现一个Activity中有很多Presenter来维护和很多的回调，有时我们只需要改动其中的一个ViewGroup内容逻辑，却不能很好的区分，所以我们要让每个View或者ViewGroup实现MVP，这样不管这个View放在哪(Activity/Fragment/ViewGroup)都能够很好的移植，并且修改某一个的时候也会互相不影响，所以通过LifeCycle和组件化View可以很好解决上面问题
 
+#### QQ群 806248089
 ### 内容
 
 - #### 1.通过模块化减少了类的创建
