@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setmOnClickListener(new RecyclerAdapter.OnClickListener() {
             @Override
             public void onClick(View view, int position) {
-//                Toast.makeText(getApplicationContext(),"position="+position,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"position="+position,Toast.LENGTH_SHORT).show();
             }
         });
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);

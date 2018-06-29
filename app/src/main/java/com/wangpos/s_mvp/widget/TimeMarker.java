@@ -3,6 +3,8 @@ package com.wangpos.s_mvp.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -27,6 +29,7 @@ public class TimeMarker extends View {
     private Drawable mStartLine;
     private Drawable mEndLine;
     private Drawable mTimerMaker;
+    private Paint mOutCirclePaint;
     Rect bounds;
     public TimeMarker(Context context) {
         super(context);
@@ -50,6 +53,9 @@ public class TimeMarker extends View {
         mStartLine = a.getDrawable(R.styleable.TimeLineMarker_beginLine);
         mTimerMaker = a.getDrawable(R.styleable.TimeLineMarker_marker);
         a.recycle();
+        mOutCirclePaint = new Paint();
+        mOutCirclePaint.setColor(Color.RED);
+        mOutCirclePaint.setStrokeWidth(4);
     }
 
     @Override
