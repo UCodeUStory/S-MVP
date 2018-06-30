@@ -62,7 +62,7 @@ public class WelcomeActivity extends BaseActivity {
         super.onClick(view);
         switch (view.getId()){
             case R.id.test_menu:
-                launcher(LoginActivity.class);
+                launch(LoginActivity.class);
                 break;
         }
     }

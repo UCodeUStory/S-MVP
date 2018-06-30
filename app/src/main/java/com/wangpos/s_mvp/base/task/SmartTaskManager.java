@@ -80,7 +80,13 @@ public class SmartTaskManager {
 
     public SyncTask getSyncTask(String tag){
         synchronized (syncTaskMap){
-            SyncTask syncTask = syncTaskMap.get(tag);
+            SyncTask syncTask = null;
+            if(syncTaskMap.containsKey(tag)) {
+                syncTask = syncTaskMap.get(tag);
+            }else{
+                syncTask = put(tag);
+            }
+
             return syncTask;
         }
 

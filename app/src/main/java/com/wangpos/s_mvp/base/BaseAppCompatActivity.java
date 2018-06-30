@@ -47,10 +47,10 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
 
     /**
-     * 默认启动,不传递任何参数
+     * 默认启动Activity,不传递任何参数
      * @param ActivityClass
      */
-    protected void launcher(Class<?> ActivityClass) {
+    protected void launch(Class<?> ActivityClass) {
         startActivity(new Intent(this,ActivityClass));
     }
 

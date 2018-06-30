@@ -141,6 +141,7 @@
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="javax.annotation:javax.annotation-api:1.2@jar" level="project" />
+    <orderEntry type="library" name="com.github.bumptech.glide:glide:3.7.0@jar" level="project" />
     <orderEntry type="module" module-name="libannotation" />
   </component>
 </module>

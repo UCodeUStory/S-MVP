@@ -9,4 +9,12 @@
         <attr name="endLine" format="color|reference"/>
         <attr name="lineSize" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="UploadProgressView">
+        <attr name="maskColor" format="color"/>
+        <attr name="text_Size" format="dimension"/>
+        <attr name="text_Color" format="color"/>
+        <attr name="animationTime" format="integer"/>
+
+    </declare-styleable>
 </resources>

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.adapter.RecyclerAdapter;
 import com.wangpos.s_mvp.base.BaseActivity;
+import com.wangpos.s_mvp.ui.synctask.SyncTaskActivity;
 import com.wangpos.s_mvp.widget.TimeModel;
 
 import java.util.ArrayList;
@@ -23,28 +24,26 @@ import java.util.List;
  * 添加详情演示
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnClickListener{
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView() {
         List<TimeModel> datas = new ArrayList<>();
         initDatas(datas);
         RecyclerAdapter adapter = new RecyclerAdapter(datas,this);
-        adapter.setmOnClickListener(new RecyclerAdapter.OnClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Toast.makeText(getApplicationContext(),"position="+position,Toast.LENGTH_SHORT).show();
-            }
-        });
+        adapter.setmOnClickListener(this);
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
-
-
     }
+
+
 
     private void initDatas(List<TimeModel> datas) {
         datas.add(new TimeModel("2017/10/11","创建S-MVP项目，目的打造一个更加清晰、易于维护、易于测试、提高开发效率的架构"));
@@ -55,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
         datas.add(new TimeModel("2018/3/2","添加插件化框架，实现轻量级View的注入"));
         datas.add(new TimeModel("2018/5/2","添加AOP切片，实现日志和缓存的代理，编译后期维护和修改"));
         datas.add(new TimeModel("2018/5/5","封装SmartTask添加多个网络异步请求，监听全部执行完成"));
+
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+
+        switch (position){
+            case 0:
+                break;
+            case 3:
+                launch(SyncTaskActivity.class);
+                break;
+        }
 
     }
 }
