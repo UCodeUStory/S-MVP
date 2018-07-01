@@ -15,7 +15,9 @@ public class WelcomePresenter extends WelcomeContract.Presenter{
         mModel.findHeader(new WelcomeContract.Model.OnLoadHeaderListener() {
             @Override
             public void onLoadSuccess(int id) {
-                mView.onLoadSuccess(id);
+                if(mView!=null) {
+                    mView.onLoadSuccess(id);
+                }
             }
         });
     }
@@ -25,7 +27,9 @@ public class WelcomePresenter extends WelcomeContract.Presenter{
         mModel.findMenu(new WelcomeContract.Model.OnLoadMenuListener() {
             @Override
             public void onLoadMenuSuccess(int id) {
-                mView.onLoadMenuSuccess(id);
+                if(mView!=null) {
+                    mView.onLoadMenuSuccess(id);
+                }
             }
         });
     }

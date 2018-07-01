@@ -29,7 +29,7 @@
             android:gravity="center"
             android:textColor="#333333"
             android:layout_height="wrap_content" />
-    x
+
     </LinearLayout>
 
 

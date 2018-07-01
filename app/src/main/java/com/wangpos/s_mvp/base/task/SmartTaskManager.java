@@ -72,6 +72,7 @@ public class SmartTaskManager {
 //                Log.i("info","key="+s);
 //
 //            }
+
             Asynctask smartTask = stmap.get(key);
             return smartTask;
         }

@@ -16,7 +16,7 @@ public class WelcomeModel extends WelcomeContract.Model {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                onLoadHeaderListener.onLoadSuccess(R.drawable.header);
+                onLoadHeaderListener.onLoadSuccess(R.drawable.d2);
                 }
         },3000);
     }
@@ -28,7 +28,7 @@ public class WelcomeModel extends WelcomeContract.Model {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                onLoadMenuListener.onLoadMenuSuccess(R.drawable.menu);
+                onLoadMenuListener.onLoadMenuSuccess(R.drawable.d4);
             }
         },4000);
     }

@@ -58,7 +58,7 @@
     <com.wangpos.s_mvp.ui.welcome.BodyView
         android:id="@+id/body_view"
         android:layout_width="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.3"
         android:orientation="vertical"
         android:layout_height="0dp">
 
@@ -70,16 +70,7 @@
             android:layout_weight="1"
             android:textSize="25sp"
             android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/test_menu"
-            android:layout_width="match_parent"
-            android:text="进入测试菜单"
-            android:textSize="15sp"
-            android:padding="10dp"
-            android:background="#f5f2f2"
-            android:textColor="#333333"
-            android:gravity="center"
-            android:layout_height="50dp" />
+
     </com.wangpos.s_mvp.ui.welcome.BodyView>
 
 

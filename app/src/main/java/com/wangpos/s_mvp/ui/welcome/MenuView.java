@@ -91,5 +91,6 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
     public void ON_DESTROY() {
         super.ON_DESTROY();
         InjectView.unbind(this);
+        mPresenter.onDetached();
     }
 }

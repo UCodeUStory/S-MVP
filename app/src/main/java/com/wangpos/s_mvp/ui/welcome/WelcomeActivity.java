@@ -26,8 +26,6 @@ import com.wangpos.s_mvp.ui.login.LoginActivity;
 
 public class WelcomeActivity extends BaseActivity {
 
-    @$(R.id.test_menu)
-    public TextView tvTestMenu;
 
     @Override
     public int getLayoutId() {
@@ -53,18 +51,13 @@ public class WelcomeActivity extends BaseActivity {
         getLifecycle().addObserver(menuView);
         getLifecycle().addObserver(bodyView);
 
-        tvTestMenu.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        switch (view.getId()){
-            case R.id.test_menu:
-                launch(LoginActivity.class);
-                break;
-        }
+
     }
 
     @Override

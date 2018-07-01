@@ -10,7 +10,9 @@ import android.widget.Toast;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.adapter.RecyclerAdapter;
 import com.wangpos.s_mvp.base.BaseActivity;
+import com.wangpos.s_mvp.ui.asynctask.AsyncTaskActivity;
 import com.wangpos.s_mvp.ui.synctask.SyncTaskActivity;
+import com.wangpos.s_mvp.ui.welcome.WelcomeActivity;
 import com.wangpos.s_mvp.widget.TimeModel;
 
 import java.util.ArrayList;
@@ -65,6 +67,12 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
                 break;
             case 3:
                 launch(SyncTaskActivity.class);
+                break;
+            case 4:
+                launch(WelcomeActivity.class);
+                break;
+            case 7:
+                launch(AsyncTaskActivity.class);
                 break;
         }
 

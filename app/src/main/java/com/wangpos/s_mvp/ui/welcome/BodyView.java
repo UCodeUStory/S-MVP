@@ -39,4 +39,10 @@ public class BodyView extends LifeLinearLayout {
             }
         });
     }
+
+    @Override
+    public void ON_DESTROY() {
+        super.ON_DESTROY();
+
+    }
 }
