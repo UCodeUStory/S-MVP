@@ -44,7 +44,7 @@ MVP 继续解耦
 
 - #### 8.自定义BindView框架，通过@$(R.id.abc)作用在public类型的变量
     1. 通过InjectView.bind();实现绑定
-    2. 通过InjectView.bind();实现解绑
+    2. 通过InjectView.unbind();实现解绑
     3. 支持在Activity和View中进行绑定
 
 - #### 9.通过javassist修改字节码的方式，可以生成类，也可以在某些特定方法注入代码，在保证不修改源码的情况，完成aop，避免代码碎片化
