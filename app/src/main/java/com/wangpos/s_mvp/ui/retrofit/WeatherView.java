@@ -73,6 +73,11 @@ public class WeatherView extends LifeRelativeLayout<WeatherPresenter> implements
 
     @Override
     public void onSearchWeatherSuccess(JHWeatherResult result) {
+        JHWeatherResult.ResultBean.TodayBean todayBean = result.getResult().getToday();
+        tvCity.setText(todayBean.getCity());
+        tvTemperature.setText(todayBean.getTemperature());
+        tvTime.setText(todayBean.getDate_y());
+        tvWeather.setText(todayBean.getWeather());
         Toast.makeText(getContext(),result.getResultcode()+"",Toast.LENGTH_SHORT).show();
     }
 }
