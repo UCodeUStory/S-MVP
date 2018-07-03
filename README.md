@@ -108,28 +108,33 @@ MVP 继续解耦
                    mavenCentral()
                }
            }
-### 我的相关技术仓库
+#### 我的相关技术仓库
 
  Repository | Repository | Repository | Repository
 ---|---|---|---
 [组件化开发框架](https://github.com/UCodeUStory/ComponentDevelopment)  | [插件化开发框架](https://github.com/UCodeUStory/AndroidPluginFramework) | [Gradle插件开发](https://github.com/UCodeUStory/GradlePlugin)|[Tinker热修复例子](https://github.com/UCodeUStory/TinkerDemo)
 [事件状态机处理](https://github.com/UCodeUStory/StateMachine) | [MVVM设计](https://github.com/UCodeUStory/MVVM) | [JavaPoet](https://github.com/UCodeUStory/JavaPoetSample)| [KotlinSMVP](https://github.com/UCodeUStory/KotlinSMVP)
 
+#### Library
+
+1. [Retrofit](https://github.com/square/retrofit)
+2. [OKHttp](https://github.com/square/okhttp)
+3. [GSON](https://github.com/google/gson)
+4. [RxJava](https://github.com/ReactiveX/RxJava)
+5. [Glide](https://github.com/bumptech/glide)
+6. [LeakCanary](https://github.com/square/leakcanary)
+
 
 ****
-### **框架待优化**
-
-2.EventBus,otto都可以考虑使用,RxJava,Retrofit,RxBus
+#### **框架待优化**
 
 3.使用Javassist注入字节码,这是一个很好的字节码编辑工具，提供在JVM运行期前修改的api
 
 4.路由实现简单的跳转，路由器也是用来解耦的，增加后台可配置性
 
-5.网络框架选择,封装一个公共的入口  (Retrofit)
-
 8.添加日志缓存框架
 
-AOP技术常用在以下方面：
+#### AOP技术常用在以下方面：
 
 1、日志记录：业务埋点
 
@@ -145,7 +150,7 @@ AOP技术常用在以下方面：
 
 7、异常处理
 
-8、添加BindPresenter，取消请求
+8、添加BindPresenter(不盲目添加，会增加耦合度)，取消请求
 
 
 #### 处理流程
