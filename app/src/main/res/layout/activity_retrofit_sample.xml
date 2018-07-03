@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wangpos.s_mvp.ui.retrofit.WeatherView
+    android:id="@+id/weather_view"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.wangpos.s_mvp.ui.retrofit.RetrofitSampleActivity"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:text="北京"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/lly_center"
+        android:layout_below="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:background="#e79898"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_above="@+id/lly_footer"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lly_footer"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+</com.wangpos.s_mvp.ui.retrofit.WeatherView>
+
