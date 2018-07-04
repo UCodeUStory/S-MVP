@@ -33,7 +33,7 @@ public class WeatherResult {
                     ", Radar='" + Radar + '\'' +
                     ", njd='" + njd + '\'' +
                     ", qy='" + qy + '\'' +
-                    '}'
+                    '}';
         }
 
         private String WS;
