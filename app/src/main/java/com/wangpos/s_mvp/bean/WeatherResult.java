@@ -1,12 +1,5 @@
 package com.wangpos.s_mvp.bean;
 
-/**
- * Created by WuXiaolong on 2015/9/23.
- * 业务具体处理，包括负责存储、检索、操纵数据等
- * github:https://github.com/WuXiaolong/
- * 微信公众号：吴小龙同学
- * 个人博客：http://wuxiaolong.me/
- */
 public class WeatherResult {
 
     private WeatherinfoBean weatherinfo;
@@ -40,7 +33,7 @@ public class WeatherResult {
                     ", Radar='" + Radar + '\'' +
                     ", njd='" + njd + '\'' +
                     ", qy='" + qy + '\'' +
-                    '}';
+                    '}'
         }
 
         private String WS;
