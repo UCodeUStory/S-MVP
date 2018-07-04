@@ -12,4 +12,7 @@
 
     <color name="r1_time">#333333</color>
     <color name="r1_content">#333333</color>
+
+    <color name="r4_time">#FFF</color>
+    <color name="r4_content">#e1d9d9</color>
 </resources>

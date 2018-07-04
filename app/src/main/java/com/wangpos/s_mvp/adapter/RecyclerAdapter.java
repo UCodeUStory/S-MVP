@@ -3,6 +3,7 @@ package com.wangpos.s_mvp.adapter;
 import android.content.Context;
 import android.support.annotation.ColorRes;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             holder.mRlyLeftCard.setVisibility(View.VISIBLE);
             holder.mRlyRightCard.setVisibility(View.INVISIBLE);
             int styleIndex = position/2;
-            switch (styleIndex){
+
+            Log.i("info","styleIndex="+styleIndex);
+
+            Log.i("info","position="+position);
+            int index = styleIndex%4;
+            switch (index){
                 case 0:
                     holder.tvLeftTime.setTextColor(getColor(R.color.l1_time));
                     holder.tvLeftContent.setTextColor(getColor(R.color.l1_content));
@@ -77,11 +83,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     holder.tvLeftContent.setTextColor(getColor(R.color.l2_content));
                     holder.mleftBackground.setBackgroundResource(R.drawable.l3);
                     break;
-//                case 3:
-//                    break;
-                default:
+                case 3:
                     holder.mleftBackground.setBackgroundResource(R.drawable.left);
                     break;
+
+
 
             }
             TranslateAnimation animation = new TranslateAnimation(500.0f, 0.0f, 0.0f, 0.0f);
@@ -109,6 +115,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
                     holder.tvRightContent.setTextColor(getColor(R.color.r1_content));
                     holder.mRightBackground.setBackgroundResource(R.drawable.r3);
+                    break;
+                case 3:
+                    holder.tvRightTime.setTextColor(getColor(R.color.r4_time));
+                    holder.tvRightContent.setTextColor(getColor(R.color.r4_content));
+                    holder.mRightBackground.setBackgroundResource(R.drawable.r4);
                     break;
                 default:
 //                    holder.tvRightTime.setTextColor(getColor(R.color.r1_time));
