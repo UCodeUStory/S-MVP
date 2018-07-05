@@ -3,8 +3,7 @@
     package="com.wangpos.s_mvp">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -28,7 +27,8 @@
         <activity
             android:name=".ui.asynctask.AsyncTaskActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".ui.retrofit.RetrofitSampleActivity"></activity>
+        <activity android:name=".ui.retrofit.RetrofitSampleActivity" />
+        <activity android:name=".ui.wxnews.WXNewsActivity"></activity>
     </application>
 
 </manifest>

@@ -152,6 +152,9 @@ MVP 继续解耦
 
 8、添加BindPresenter(不盲目添加，会增加耦合度)，取消请求
 
+9、优化框架，取消网络请求，参数获取封装$(),封装Log
+
+10、添加测试驱动开发、写单元测试Presenter 和Model
 
 #### 处理流程
  1. 在build 过程我们可以通过apt 生成java文件,再通过Aspectj解析，编织成class,最后我们还可以通过Javassist修改class和jar文件，最终打包成dex 到 apk
