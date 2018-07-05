@@ -23,4 +23,9 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.wangpos.s_mvp", appContext.getPackageName());
     }
+
+    @Test
+    public void test(){
+        System.out.print("hahahahahha");
+    }
 }

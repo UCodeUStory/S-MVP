@@ -18,7 +18,7 @@ public class WXNewsPresenter extends Presenter {
     }
 
     @Override
-    void onFindWXNews() {
+    public void onFindWXNews() {
 
         mModel.findWXNews(mView.getPage(), mView.getPageSize(), new WXNewsContract.Model.OnFindListener() {
             @Override

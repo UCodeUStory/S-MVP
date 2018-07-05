@@ -48,7 +48,7 @@ public interface WXNewsContract {
 
         }
 
-        abstract void onFindWXNews();
+        public abstract void onFindWXNews();
 
     }
 }
