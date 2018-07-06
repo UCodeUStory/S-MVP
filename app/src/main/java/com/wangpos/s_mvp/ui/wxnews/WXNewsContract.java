@@ -5,6 +5,7 @@ import android.support.annotation.DrawableRes;
 import com.wangpos.s_mvp.base.BaseModel;
 import com.wangpos.s_mvp.base.BasePresenter;
 import com.wangpos.s_mvp.base.BaseView;
+import com.wangpos.s_mvp.base.http.ApiCallback;
 import com.wangpos.s_mvp.bean.WXNewsResult;
 import com.wangpos.s_mvp.ui.SampleContract;
 import com.wangpos.s_mvp.ui.welcome.WelcomeContract;
@@ -34,6 +35,8 @@ public interface WXNewsContract {
 
        abstract Call findWXNews(int page, int pageSize, OnFindListener onFindListener);
 
+       abstract void findWXNewsByRXJava(int page, int pageSize, ApiCallback<WXNewsResult> callback);
+
        public interface OnFindListener{
            void onError(Throwable t);
 
@@ -48,7 +51,16 @@ public interface WXNewsContract {
 
         }
 
+        @Override
+        public void onDetached() {
+            //先取消注册
+            mModel.onUnSubscribe();
+            super.onDetached();
+        }
+
         public abstract void onFindWXNews();
+
+        public abstract void findWXNewsByRXJava();
 
     }
 }

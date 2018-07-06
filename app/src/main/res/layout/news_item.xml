@@ -22,10 +22,10 @@
                 android:textColor="#9c39b4"
                 android:textSize="15sp"
                 android:layout_height="wrap_content" />
-            <com.wangpos.s_mvp.widget.SWImageView
+            <ImageView
                 android:id="@+id/swi_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp" />
             <TextView
                 android:id="@+id/tv_source"
                 android:layout_margin="10dp"

@@ -108,6 +108,9 @@ MVP 继续解耦
                    mavenCentral()
                }
            }
+           
+- #### 13.以测试驱动开发应用程序,开发中先在AndroidTest编写好单元测试
+
 #### 我的相关技术仓库
 
  Repository | Repository | Repository | Repository
@@ -154,14 +157,12 @@ MVP 继续解耦
 
 9、优化框架，取消网络请求，参数获取封装$(),封装Log
 
-10、添加测试驱动开发、写单元测试Presenter 和Model
+
 
 #### 处理流程
  1. 在build 过程我们可以通过apt 生成java文件,再通过Aspectj解析，编织成class,最后我们还可以通过Javassist修改class和jar文件，最终打包成dex 到 apk
 
 
-#### Thanks
- - [Bai xiaokang]()
  
 #### 友情链接
  - [fly803/BaseProject](https://github.com/fly803/BaseProject) 

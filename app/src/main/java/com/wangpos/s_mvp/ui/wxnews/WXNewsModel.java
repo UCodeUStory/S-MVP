@@ -1,9 +1,15 @@
 package com.wangpos.s_mvp.ui.wxnews;
 
+import com.wangpos.s_mvp.base.http.ApiCallback;
 import com.wangpos.s_mvp.base.http.ServiceFactory;
 import com.wangpos.s_mvp.bean.WXNewsResult;
 import com.wangpos.s_mvp.ui.retrofit.WeatherApiService;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -15,6 +21,9 @@ import retrofit2.Response;
 public class WXNewsModel extends WXNewsContract.Model {
 
     WXNewsApiService wxNewsApiService;
+
+    private CompositeDisposable mCompositeDisposable;
+
     public WXNewsModel(){
         this.wxNewsApiService = ServiceFactory.getInstance().createService(WXNewsApiService.class, WXNewsApiService.WX_NEWS_API);
     }
@@ -41,4 +50,14 @@ public class WXNewsModel extends WXNewsContract.Model {
         return call;
         // return call
     }
+
+    @Override
+    public void findWXNewsByRXJava(int page, int pageSize, ApiCallback<WXNewsResult> callback){
+        addSubscription(wxNewsApiService.findWXNewsRxJava(page,pageSize,"json",WXNewsApiService.KEY),callback);
+
+    }
+
+
+
+
 }

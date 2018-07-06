@@ -45,7 +45,8 @@ public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements
         adapter = new WXListAdapter(new ArrayList<>(),getContext());
         adapter.setmOnClickListener(this);
         mPresenter.onAttachedView(this);
-        mPresenter.onFindWXNews();
+//        mPresenter.onFindWXNews();
+        mPresenter.findWXNewsByRXJava();
 
 
     }

@@ -4,10 +4,13 @@ import com.wangpos.s_mvp.bean.JHWeatherResult;
 import com.wangpos.s_mvp.bean.WXNewsResult;
 import com.wangpos.s_mvp.bean.WeatherResult;
 
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+
+import io.reactivex.Observable;
 
 /**
  * Created by qiyue on 2018/7/5.
@@ -22,6 +25,9 @@ public interface WXNewsApiService {
 
     @GET("query")
     Call<WXNewsResult> findWXNews(@Query("pno") int pno, @Query("ps")int ps, @Query("dtype")String dtype, @Query("key")String key);
+
+    @GET("query")
+    Observable<WXNewsResult> findWXNewsRxJava(@Query("pno") int pno, @Query("ps")int ps, @Query("dtype")String dtype, @Query("key")String key);
 
 
 

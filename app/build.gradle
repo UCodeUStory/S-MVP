@@ -63,7 +63,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     annotationProcessor project(':libcomplier')
-
     compile project(path: ':libannotation')
 
 
@@ -75,11 +74,13 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 
-
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$logginginterceptor"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     compile 'com.android.support:cardview-v7:26.1.0'
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
 
 }

@@ -2,6 +2,8 @@ package com.wangpos.s_mvp.ui.wxnews;
 
 import android.util.Log;
 
+import com.wangpos.s_mvp.base.http.ApiCallback;
+import com.wangpos.s_mvp.base.http.ServiceFactory;
 import com.wangpos.s_mvp.bean.WXNewsResult;
 import com.wangpos.s_mvp.ui.wxnews.WXNewsContract.Presenter;
 
@@ -33,4 +35,26 @@ public class WXNewsPresenter extends Presenter {
             }
         });
     }
+
+    @Override
+    public void findWXNewsByRXJava() {
+        mModel.findWXNewsByRXJava(mView.getPage(), mView.getPageSize(), new ApiCallback<WXNewsResult>() {
+            @Override
+            public void onSuccess(WXNewsResult model) {
+                mView.OnFindNewsResults(model);
+            }
+
+            @Override
+            public void onFailure(String msg) {
+                mView.OnError(msg);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        });
+    }
+
+
 }

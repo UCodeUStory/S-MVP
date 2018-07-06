@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -77,13 +78,13 @@ public class WXListAdapter extends RecyclerView.Adapter<WXListAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView tvTitle;
         public TextView tvSource;
-        public SWImageView swImageView;
+        public ImageView swImageView;
 
         public ViewHolder(View itemView, Context context, int itemType) {
             super(itemView);
             tvTitle = (TextView)itemView.findViewById(R.id.tv_title);
             tvSource = (TextView)itemView.findViewById(R.id.tv_source);
-            swImageView = (SWImageView)itemView.findViewById(R.id.swi_content);
+            swImageView = (ImageView)itemView.findViewById(R.id.swi_content);
 
 
 

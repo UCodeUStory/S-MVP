@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -35,6 +36,7 @@ public class ServiceFactory {
                 .baseUrl(baseUrl)
                 .client(getOkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//使用RXJava一定要添加
                 .build();
         return retrofit.create(serviceClass);
     }
