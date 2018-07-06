@@ -3,6 +3,7 @@ package com.wangpos.s_mvp.ui.wxnews;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.bindview.$;
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.BaseActivity;
 
@@ -34,6 +35,8 @@ import com.wangpos.s_mvp.base.BaseActivity;
 public class WXNewsActivity extends BaseActivity {
 
 
+    @$(R.id.recyclerView)
+    public WXNewsListView wxNewsListView;
     @Override
     public int getLayoutId() {
         return R.layout.activity_wxnews;
@@ -41,6 +44,7 @@ public class WXNewsActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        getLifecycle().addObserver(wxNewsListView);
 
     }
 }

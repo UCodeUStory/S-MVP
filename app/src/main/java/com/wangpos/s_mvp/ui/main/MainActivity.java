@@ -14,6 +14,7 @@ import com.wangpos.s_mvp.ui.asynctask.AsyncTaskActivity;
 import com.wangpos.s_mvp.ui.retrofit.RetrofitSampleActivity;
 import com.wangpos.s_mvp.ui.synctask.SyncTaskActivity;
 import com.wangpos.s_mvp.ui.welcome.WelcomeActivity;
+import com.wangpos.s_mvp.ui.wxnews.WXNewsActivity;
 import com.wangpos.s_mvp.widget.TimeModel;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
         datas.add(new TimeModel("2018/5/2","添加AOP切片，实现日志和缓存的代理，编译后期维护和修改"));
         datas.add(new TimeModel("2018/5/5","封装SmartTask添加多个网络异步请求，监听全部执行完成"));
         datas.add(new TimeModel("2018/7/3","添加Retrofit框架"));
+        datas.add(new TimeModel("2018/7/6","添加RxJava框架"));
 
 
 
@@ -80,6 +82,9 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
                 break;
             case 8:
                 launch(RetrofitSampleActivity.class);
+                break;
+            case 9:
+                launch(WXNewsActivity.class);
                 break;
         }
 

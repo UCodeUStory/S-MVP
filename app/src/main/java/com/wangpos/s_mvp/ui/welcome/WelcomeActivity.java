@@ -26,7 +26,14 @@ import com.wangpos.s_mvp.ui.login.LoginActivity;
 
 public class WelcomeActivity extends BaseActivity {
 
+    @$(R.id.life_linearlayout)
+    public HeaderView lifeLinearLayout;
 
+    @$(R.id.menu_layout)
+    public MenuView menuView;
+
+    @$(R.id.body_view)
+    public BodyView bodyView;
     @Override
     public int getLayoutId() {
         return R.layout.activity_welcome;
@@ -43,9 +50,9 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void initView() {
 
-        HeaderView lifeLinearLayout = (HeaderView)$(R.id.life_linearlayout);
-        MenuView menuView = (MenuView)$(R.id.menu_layout);
-        BodyView bodyView = (BodyView)$(R.id.body_view) ;
+//        HeaderView lifeLinearLayout = (HeaderView)$(R.id.life_linearlayout);
+//        MenuView menuView = (MenuView)$(R.id.menu_layout);
+//        BodyView bodyView = (BodyView)$(R.id.body_view) ;
 
         getLifecycle().addObserver(lifeLinearLayout);
         getLifecycle().addObserver(menuView);

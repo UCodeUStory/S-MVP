@@ -27,8 +27,13 @@
         <activity
             android:name=".ui.asynctask.AsyncTaskActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".ui.retrofit.RetrofitSampleActivity" />
-        <activity android:name=".ui.wxnews.WXNewsActivity"></activity>
+        <activity android:name=".ui.retrofit.RetrofitSampleActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
+        <activity android:name=".ui.wxnews.WXNewsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+        <activity android:name=".base.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

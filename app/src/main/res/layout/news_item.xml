@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+       >
+        <LinearLayout
+            android:id="@+id/lly_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:background="#fcfbe2"
+                android:text="测试"
+                android:padding="10dp"
+                android:textColor="#9c39b4"
+                android:textSize="15sp"
+                android:layout_height="wrap_content" />
+            <com.wangpos.s_mvp.widget.SWImageView
+                android:id="@+id/swi_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_source"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:text="微信精选"
+                android:textColor="#FFF"
+                android:background="@drawable/bg_android_tag"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

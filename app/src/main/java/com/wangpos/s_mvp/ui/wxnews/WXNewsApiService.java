@@ -22,4 +22,7 @@ public interface WXNewsApiService {
 
     @GET("query")
     Call<WXNewsResult> findWXNews(@Query("pno") int pno, @Query("ps")int ps, @Query("dtype")String dtype, @Query("key")String key);
+
+
+
 }
