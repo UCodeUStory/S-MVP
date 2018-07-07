@@ -54,6 +54,15 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         startActivity(new Intent(this,ActivityClass));
     }
 
+    /**
+     * 启动网页
+     * @param url
+     */
+    protected void launch(String url) {
+        Intent webIntent = new Intent(this, WebViewActivity.class);
+        webIntent.putExtra(WebViewActivity.EXTRA_URL,url);
+        startActivity(webIntent);
+    }
 
     @SuppressWarnings("unchecked")
     protected <V extends View> V $(int id) {

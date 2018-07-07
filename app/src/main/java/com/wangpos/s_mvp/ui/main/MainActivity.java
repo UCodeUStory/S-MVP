@@ -62,6 +62,40 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
         datas.add(new TimeModel("2018/7/6","联合使用RxJava和Retrofit获取微信精选"));
 
 
+        datas.add(new TimeModel("2017/10/11","创建S-MVP项目，打造一个易于维护、易于测试、提高开发效率的架构"));
+        datas.add(new TimeModel("2017/12/1","引入谷歌MVP Contracts思想，接口统一化封装,减少类的创建"));
+        datas.add(new TimeModel("2017/12/12","引入AOP插件，跟优雅的监听和维护项目"));
+        datas.add(new TimeModel("2017/12/27","封装SmartTask添加多个网络请求顺序处理"));
+        datas.add(new TimeModel("2018/2/10","添加LifeCycle实现业务分离"));
+        datas.add(new TimeModel("2018/3/2","添加插件化框架，实现轻量级View的注入"));
+        datas.add(new TimeModel("2018/5/2","添加AOP切片，实现日志和缓存的代理，编译后期维护和修改"));
+        datas.add(new TimeModel("2018/5/5","封装SmartTask添加多个网络异步请求，监听全部执行完成"));
+        datas.add(new TimeModel("2018/7/3","单独使用Retrofit获取天气信息"));
+        datas.add(new TimeModel("2018/7/6","联合使用RxJava和Retrofit获取微信精选"));
+
+        datas.add(new TimeModel("2017/10/11","创建S-MVP项目，打造一个易于维护、易于测试、提高开发效率的架构"));
+        datas.add(new TimeModel("2017/12/1","引入谷歌MVP Contracts思想，接口统一化封装,减少类的创建"));
+        datas.add(new TimeModel("2017/12/12","引入AOP插件，跟优雅的监听和维护项目"));
+        datas.add(new TimeModel("2017/12/27","封装SmartTask添加多个网络请求顺序处理"));
+        datas.add(new TimeModel("2018/2/10","添加LifeCycle实现业务分离"));
+        datas.add(new TimeModel("2018/3/2","添加插件化框架，实现轻量级View的注入"));
+        datas.add(new TimeModel("2018/5/2","添加AOP切片，实现日志和缓存的代理，编译后期维护和修改"));
+        datas.add(new TimeModel("2018/5/5","封装SmartTask添加多个网络异步请求，监听全部执行完成"));
+        datas.add(new TimeModel("2018/7/3","单独使用Retrofit获取天气信息"));
+        datas.add(new TimeModel("2018/7/6","联合使用RxJava和Retrofit获取微信精选"));
+
+        datas.add(new TimeModel("2017/10/11","创建S-MVP项目，打造一个易于维护、易于测试、提高开发效率的架构"));
+        datas.add(new TimeModel("2017/12/1","引入谷歌MVP Contracts思想，接口统一化封装,减少类的创建"));
+        datas.add(new TimeModel("2017/12/12","引入AOP插件，跟优雅的监听和维护项目"));
+        datas.add(new TimeModel("2017/12/27","封装SmartTask添加多个网络请求顺序处理"));
+        datas.add(new TimeModel("2018/2/10","添加LifeCycle实现业务分离"));
+        datas.add(new TimeModel("2018/3/2","添加插件化框架，实现轻量级View的注入"));
+        datas.add(new TimeModel("2018/5/2","添加AOP切片，实现日志和缓存的代理，编译后期维护和修改"));
+        datas.add(new TimeModel("2018/5/5","封装SmartTask添加多个网络异步请求，监听全部执行完成"));
+        datas.add(new TimeModel("2018/7/3","单独使用Retrofit获取天气信息"));
+        datas.add(new TimeModel("2018/7/6","联合使用RxJava和Retrofit获取微信精选"));
+
+
 
     }
 
@@ -70,6 +104,7 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
 
         switch (position){
             case 0:
+                launch("https://github.com/UCodeUStory/S-MVP");
                 break;
             case 3:
                 launch(SyncTaskActivity.class);
