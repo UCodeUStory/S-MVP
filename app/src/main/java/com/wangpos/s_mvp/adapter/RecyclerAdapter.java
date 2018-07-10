@@ -90,10 +90,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 
             }
-//            TranslateAnimation animation = new TranslateAnimation(500.0f, 0.0f, 0.0f, 0.0f);
-//            animation.setFillAfter(true);
-//            animation.setDuration(800);
-//            holder.mleftBackground.startAnimation(animation);
+            TranslateAnimation animation = new TranslateAnimation(500.0f, 0.0f, 0.0f, 0.0f);
+            animation.setFillAfter(true);
+            animation.setDuration(800);
+            holder.mleftBackground.startAnimation(animation);
 
         }else{
             holder.mRlyRightCard.setVisibility(View.VISIBLE);
@@ -127,10 +127,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 //                    holder.mRightBackground.setBackgroundResource(R.drawable.right);
                     break;
             }
-//            TranslateAnimation animation = new TranslateAnimation(-1000.0f, 0.0f, 0.0f, 0.0f);
-//            animation.setFillAfter(true);
-//            animation.setDuration(800);
-//            holder.mRightBackground.startAnimation(animation);
+            TranslateAnimation animation = new TranslateAnimation(-1000.0f, 0.0f, 0.0f, 0.0f);
+            animation.setFillAfter(true);
+            animation.setDuration(800);
+            holder.mRightBackground.startAnimation(animation);
         }
     }
 
