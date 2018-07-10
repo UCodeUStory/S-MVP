@@ -9,6 +9,7 @@ import java.util.List;
 public class MeiziResult {
 
 
+
     private String showapi_res_error;
     private int showapi_res_code;
     private ShowapiResBodyBean showapi_res_body;
@@ -48,6 +49,14 @@ public class MeiziResult {
 
     public static class ShowapiResBodyBean {
 
+        @Override
+        public String toString() {
+            return "ShowapiResBodyBean{" +
+                    "ret_code=" + ret_code +
+                    ", pagebean=" + pagebean +
+                    '}';
+        }
+
         private int ret_code;
         private PagebeanBean pagebean;
 
@@ -69,11 +78,23 @@ public class MeiziResult {
 
         public static class PagebeanBean {
 
+
             private int allPages;
             private int currentPage;
             private int allNum;
             private int maxResult;
             private List<ContentlistBean> contentlist;
+
+            @Override
+            public String toString() {
+                return "PagebeanBean{" +
+                        "allPages=" + allPages +
+                        ", currentPage=" + currentPage +
+                        ", allNum=" + allNum +
+                        ", maxResult=" + maxResult +
+                        ", contentlist=" + contentlist +
+                        '}';
+            }
 
             public int getAllPages() {
                 return allPages;
@@ -103,17 +124,6 @@ public class MeiziResult {
                 return maxResult;
             }
 
-            @Override
-            public String toString() {
-                return "PagebeanBean{" +
-                        "allPages=" + allPages +
-                        ", currentPage=" + currentPage +
-                        ", allNum=" + allNum +
-                        ", maxResult=" + maxResult +
-                        ", contentlist=" + contentlist +
-                        '}';
-            }
-
             public void setMaxResult(int maxResult) {
                 this.maxResult = maxResult;
             }
@@ -133,6 +143,19 @@ public class MeiziResult {
                 private String title;
                 private int type;
                 private String itemId;
+
+                @Override
+                public String toString() {
+                    return "ContentlistBean{" +
+                            "typeName='" + typeName + '\'' +
+                            ", title='" + title + '\'' +
+                            ", type=" + type +
+                            ", itemId='" + itemId + '\'' +
+                            ", ct='" + ct + '\'' +
+                            ", list=" + list +
+                            '}';
+                }
+
                 private String ct;
                 private List<ListBean> list;
 
@@ -186,22 +209,12 @@ public class MeiziResult {
 
                 public static class ListBean {
                     /**
-                     * big : http://image.tianjimedia.com/uploadImages/2015/162/24/9T0H9OF8B26M.jpg
-                     * middle : http://image.tianjimedia.com/uploadImages/2015/162/24/9T0H9OF8B26M_680x500.jpg
-                     * small : http://image.tianjimedia.com/uploadImages/2015/162/24/9T0H9OF8B26M_113.jpg
+                     * big : http://image.tianjimedia.com/uploadImages/2016/072/06/Y6717GU52BOW.jpg
+                     * middle : http://image.tianjimedia.com/uploadImages/2016/072/06/Y6717GU52BOW_680x500.jpg
+                     * small : http://image.tianjimedia.com/uploadImages/2016/072/06/Y6717GU52BOW_113.jpg
                      */
 
                     private String big;
-
-                    @Override
-                    public String toString() {
-                        return "ListBean{" +
-                                "big='" + big + '\'' +
-                                ", middle='" + middle + '\'' +
-                                ", small='" + small + '\'' +
-                                '}';
-                    }
-
                     private String middle;
                     private String small;
 
@@ -230,14 +243,6 @@ public class MeiziResult {
                     }
                 }
             }
-        }
-
-        @Override
-        public String toString() {
-            return "ShowapiResBodyBean{" +
-                    "ret_code=" + ret_code +
-                    ", pagebean=" + pagebean +
-                    '}';
         }
     }
 }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.wangpos.s_mvp.adapter.MeiziListAdapter;
 import com.wangpos.s_mvp.adapter.WXListAdapter;
@@ -13,6 +14,7 @@ import com.wangpos.s_mvp.base.widget.LifeRecyclerView;
 import com.wangpos.s_mvp.bean.MeiziResult;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by qiyue on 2018/7/10.
@@ -46,9 +48,19 @@ public class MeiziListView extends LifeRecyclerView<MeiziPresenter> implements M
 
     @Override
     public void onFindPictureSuccess(MeiziResult meiziResult) {
-        adapter.setDatas(meiziResult.getShowapi_res_body().getPagebean().getContentlist());
-        adapter.notifyDataSetChanged();
-        setAdapter(adapter);
+//        toast(""+meiziResult);
+        Log.i("info",""+meiziResult);
+
+        if(meiziResult.getShowapi_res_body().getPagebean().getContentlist()!=null) {
+            List<MeiziResult.ShowapiResBodyBean.PagebeanBean.ContentlistBean> contentlistBean = meiziResult.getShowapi_res_body().getPagebean().getContentlist();
+            for (int i=0;i<6;i++){
+                //前6个太丑，干掉……
+                contentlistBean.remove(0);
+            }
+            adapter.setDatas(contentlistBean);
+            adapter.notifyDataSetChanged();
+            setAdapter(adapter);
+        }
     }
 
     @Override

@@ -21,8 +21,11 @@ public interface MeiziApiService {
 
     public static final String APP_ID = "69382";
 
-    public static final String scret = "5BF3E7EAD11FFBCC2208AB4655C046EA";
+    //4001 scret
+    public static final String secret_4001 = "5BF3E7EAD11FFBCC2208AB4655C046EA";
 
+    //4009
+    public static final String secret_4009 = "ED04C0508B0C574EF16B9BCB7A8455FA";
 //    public static final String secret = "44D406822E2EFB85AF4896FCCE57AE94";
 
     @GET("852-2")

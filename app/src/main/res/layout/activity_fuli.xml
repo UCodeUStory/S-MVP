@@ -9,6 +9,7 @@
     <com.wangpos.s_mvp.ui.meizi.MeiziListView
         android:id="@+id/meizi_list"
         android:layout_width="match_parent"
+        android:scrollbars="vertical"
         android:layout_height="match_parent">
 
     </com.wangpos.s_mvp.ui.meizi.MeiziListView>
