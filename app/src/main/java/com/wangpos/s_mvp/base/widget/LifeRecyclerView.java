@@ -18,11 +18,13 @@ import java.lang.reflect.ParameterizedType;
  * Created by qiyue on 2018/7/6.
  */
 
-public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView implements LifecycleObserver {
+public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView implements LifecycleObserver,IBase {
 
 
 
     protected P mPresenter;
+
+    protected IBase iBase;
 
     public LifeRecyclerView(Context context) {
         super(context);
@@ -42,6 +44,7 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
         initPresenter();
+        iBase = new BaseImpl(getContext());//初始化公共操作
     }
 
     private void initPresenter() {
@@ -86,6 +89,11 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void ON_DESTROY() {
         Log.i("info","MyObserver:ON_DESTROY");
+    }
+
+    @Override
+    public void toast(String msg) {
+        iBase.toast(msg);
     }
 }
 

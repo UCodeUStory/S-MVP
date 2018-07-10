@@ -21,8 +21,8 @@ public class MeiziPresenterTest {
 
         meiziPresenter.onAttachedView(new MeiziContract.View() {
             @Override
-            public String getPage() {
-                return "1";
+            public int getPage() {
+                return 1;
             }
 
             @Override
@@ -30,10 +30,11 @@ public class MeiziPresenterTest {
                 return "4009";
             }
 
+
             @Override
             public void onFindPictureSuccess(MeiziResult meiziResult) {
 
-                Log.i("info","info="+meiziResult.getShowapi_res_body().getPagebean().getContentlist().size());
+                Log.i("info","info="+meiziResult);
             }
 
             @Override

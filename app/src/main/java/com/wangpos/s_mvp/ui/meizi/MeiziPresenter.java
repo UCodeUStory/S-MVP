@@ -31,7 +31,10 @@ public class MeiziPresenter extends MeiziContract.Presenter {
             @Override
             public void onFinish() {
 
-                Log.i("info","onFinish");
+//                Log.i("info","onFinish");
+
+
+
 
             }
         });

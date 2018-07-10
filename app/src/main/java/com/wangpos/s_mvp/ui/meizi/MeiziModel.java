@@ -24,7 +24,7 @@ public class MeiziModel extends MeiziContract.Model{
 
 
     @Override
-    void findPicture(String page,String type, ApiCallback<MeiziResult> callback) {
+    void findPicture(int page,String type, ApiCallback<MeiziResult> callback) {
 
         addSubscription(meiziApiService.searchMeiziPicture(page,type,MeiziApiService.APP_ID,MeiziApiService.scret),callback);
 

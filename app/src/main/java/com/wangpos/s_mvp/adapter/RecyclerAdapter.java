@@ -89,7 +89,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     break;
 
 
-
             }
 //            TranslateAnimation animation = new TranslateAnimation(500.0f, 0.0f, 0.0f, 0.0f);
 //            animation.setFillAfter(true);

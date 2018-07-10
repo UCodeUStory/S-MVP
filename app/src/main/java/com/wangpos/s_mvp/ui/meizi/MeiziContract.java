@@ -16,7 +16,7 @@ public interface MeiziContract {
 
     interface View extends BaseView {
 
-        String getPage();
+        int getPage();
 
         String getType();
 
@@ -28,7 +28,7 @@ public interface MeiziContract {
 
     abstract class Model extends BaseModel {
 
-        abstract void findPicture(String page,String type, ApiCallback<MeiziResult> callback);
+        abstract void findPicture(int page,String type, ApiCallback<MeiziResult> callback);
 
         public interface OnFindListener{
             void onError(Throwable t);

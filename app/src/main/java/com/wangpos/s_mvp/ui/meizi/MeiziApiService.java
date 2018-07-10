@@ -19,12 +19,14 @@ public interface MeiziApiService {
     String API_GET_MEIZI = "http://route.showapi.com/";
 
 
-    public static final String APP_ID = "69364";
+    public static final String APP_ID = "69382";
 
-    public static final String scret = "48cc72be079a4438a60a5e6687dc014b";
+    public static final String scret = "5BF3E7EAD11FFBCC2208AB4655C046EA";
+
+//    public static final String secret = "44D406822E2EFB85AF4896FCCE57AE94";
 
     @GET("852-2")
-    Observable<MeiziResult> searchMeiziPicture(@Query("page") String page, @Query("type")String type,
+    Observable<MeiziResult> searchMeiziPicture(@Query("page") int page, @Query("type")String type,
                                                @Query("showapi_appid")String showapi_appid, @Query("showapi_sign") String showapi_sign);
 
 
