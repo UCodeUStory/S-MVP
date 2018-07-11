@@ -186,6 +186,11 @@ public class ImagePresenter extends SyncTaskContract.Presenter{
     }
 
 
-
-
+    @Override
+    public void onDetached() {
+        super.onDetached();
+        SmartTaskManager smartTaskManager = SmartTaskManager.as();
+        smartTaskManager.remove("loadImage");
+        mHandler.removeCallbacksAndMessages(null);
+    }
 }

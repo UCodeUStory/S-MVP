@@ -68,4 +68,10 @@ public class AsyncTaskActivity extends BaseActivity {
 
         return imageUrls;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        displayAdapter.onDetached();
+    }
 }

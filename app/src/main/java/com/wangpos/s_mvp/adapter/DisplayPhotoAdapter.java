@@ -111,4 +111,9 @@ public class DisplayPhotoAdapter extends RecyclerView.Adapter<DisplayPhotoAdapte
 //            uploadView = (UploadProgressView)itemView.findViewById(R.id.progressView);
         }
     }
+
+
+    public void onDetached(){
+        presenter.onDetached();
+    }
 }

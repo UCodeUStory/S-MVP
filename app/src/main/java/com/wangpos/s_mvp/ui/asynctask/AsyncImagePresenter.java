@@ -169,6 +169,12 @@ public class AsyncImagePresenter extends AsyncTaskContract.Presenter{
     }
 
 
-
-
+    @Override
+    public void onDetached() {
+        super.onDetached();
+        // 避免内存泄露
+        SmartTaskManager smartTaskManager = SmartTaskManager.as();
+        smartTaskManager.remove("asloadImage");
+        mHandler.removeCallbacksAndMessages(null);
+    }
 }

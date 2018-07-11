@@ -45,6 +45,13 @@ public class SyncTaskActivity extends BaseActivity {
 
         return imageUrls;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        uploadPhotoAdapter.onDetached();
+    }
 }
 
 
