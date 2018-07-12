@@ -12,7 +12,6 @@
 [![License](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/UCodeUStory/S-MVP/blob/master/LICENSE)
 
 </div>
-<div align="center">
 
 ### 引言
 
