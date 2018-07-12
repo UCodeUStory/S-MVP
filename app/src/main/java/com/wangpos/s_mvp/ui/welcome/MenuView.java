@@ -64,7 +64,7 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if (count[0] >0){
-                    tvTime.setText("加载中..."+count[0]);
+                    tvTime.setText("MenuView独立加载("+count[0]+")");
                     count[0]--;
                     mHandler.sendEmptyMessageDelayed(0,1000);
                 }else{
