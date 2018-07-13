@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.wangpos.s_mvp.bean.JHWeatherResult;
 import com.wangpos.s_mvp.bean.WeatherResult;
+import com.wangpos.s_mvp.constants.RequestTag;
+
+import retrofit2.Call;
 
 /**
  * Created by qiyue on 2018/7/3.
@@ -44,11 +47,15 @@ public class WeatherPresenter extends WeatherContract.Presenter {
     @Override
     void getWeatherByCityName(String cityName) {
         Log.i("info","city="+cityName);
-        mModel.getWeatherByCityName(cityName, new WeatherContract.Model.OnSearchWeatherListener() {
+        Call call = mModel.getWeatherByCityName(cityName, new WeatherContract.Model.OnSearchWeatherListener() {
             @Override
             public void onSearchWeatherSuccess(JHWeatherResult result) {
                 mView.onSearchWeatherSuccess(result);
             }
         });
+
+        this.mRequestMaps.put(RequestTag.GET_WEATHER,call);
+
+
     }
 }

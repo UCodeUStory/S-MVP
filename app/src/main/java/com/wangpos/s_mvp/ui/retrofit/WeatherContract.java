@@ -9,6 +9,8 @@ import com.wangpos.s_mvp.bean.JHWeatherResult;
 import com.wangpos.s_mvp.bean.WeatherResult;
 import com.wangpos.s_mvp.ui.welcome.WelcomeContract;
 
+import retrofit2.Call;
+
 /**
  * Created by qiyue on 2018/7/3.
  */
@@ -26,7 +28,7 @@ public interface WeatherContract {
 
         abstract void getWeatherByCity(String city,OnSearchListener onSearchListener);
 
-        abstract void getWeatherByCityName(String cityName,OnSearchWeatherListener onSearchWeatherListener);
+        abstract Call getWeatherByCityName(String cityName, OnSearchWeatherListener onSearchWeatherListener);
 
         public interface OnSearchListener{
             void onSearchSuccess(WeatherResult result);

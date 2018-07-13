@@ -45,7 +45,7 @@ public class WeatherModel extends WeatherContract.Model {
     }
 
     @Override
-    void getWeatherByCityName(String cityName, OnSearchWeatherListener onSearchWeatherListener) {
+    Call getWeatherByCityName(String cityName, OnSearchWeatherListener onSearchWeatherListener) {
         Call<JHWeatherResult>call = weatherApiService.loadJHWeather(cityName,"json",1,WeatherApiService.KEY);
         call.enqueue(new Callback<JHWeatherResult>() {
             @Override
@@ -59,5 +59,7 @@ public class WeatherModel extends WeatherContract.Model {
 
             }
         });
+
+        return call;
     }
 }
