@@ -118,7 +118,11 @@
 
 - #### 14.不建议使用DataBinding 因为会增加对布局的耦合的，布局复用性就差了
 
+#### 架构图
 
+<div align="center">
+<img width="800" height="425" src="https://github.com/UCodeUStory/DataStructure/blob/master/menu.png"/>
+</div>
 
 
 #### 我的相关技术仓库
