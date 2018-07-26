@@ -35,6 +35,7 @@ public class WeiXinNewsTest {
             public void OnFindNewsResults(WXNewsResult wxNewsResult) {
 
                 Log.i("info",""+"findSize="+wxNewsResult.getResult().getList().size());
+                Log.i("info",""+"findSize="+wxNewsResult.getResult().getList().toString());
 
             }
 

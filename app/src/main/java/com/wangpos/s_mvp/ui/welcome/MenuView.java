@@ -19,10 +19,8 @@ import com.wangpos.s_mvp.base.widget.LifeFrameLayout;
  * Created by qiyue on 2018/2/28.
  */
 
-public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
+public class MenuView extends LifeFrameLayout<WelcomePresenter> implements WelcomeContract.View {
 
-
-    private WelcomeContract.Presenter mPresenter;
 
     @$(R.id.iv_menu)
     public ImageView imageView;
@@ -45,35 +43,27 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
         super(context, attrs, defStyleAttr);
     }
 
-
-
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
-        //notice 初始化presenter
-        InjectView.bind(this);
         smartTaskManager = SmartTaskManager.as();
-        mPresenter = new WelcomePresenter();
-        mPresenter.onAttachedView(this);
         mPresenter.loadMenu();
-//        imageView = findViewById(R.id.iv_menu);
-//        tvTime = findViewById(R.id.menu_time);
         final int[] count = {4};
-        mHandler = new Handler(){
+        mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                if (count[0] >0){
-                    tvTime.setText("MenuView独立加载("+count[0]+")");
+                if (count[0] > 0) {
+                    tvTime.setText("MenuView独立加载(" + count[0] + ")");
                     count[0]--;
-                    mHandler.sendEmptyMessageDelayed(0,1000);
-                }else{
+                    mHandler.sendEmptyMessageDelayed(0, 1000);
+                } else {
                     tvTime.setVisibility(GONE);
                 }
             }
         };
         mHandler.sendEmptyMessage(0);
-        Log.i("info","MyObserver:ON_CREATE");
+        Log.i("info", "MyObserver:ON_CREATE");
     }
 
     @Override
@@ -87,10 +77,4 @@ public class MenuView extends LifeFrameLayout implements WelcomeContract.View{
         smartTaskManager.getAsyncTask("initPage").onFinish();
     }
 
-    @Override
-    public void ON_DESTROY() {
-        super.ON_DESTROY();
-        InjectView.unbind(this);
-        mPresenter.onDetached();
-    }
 }

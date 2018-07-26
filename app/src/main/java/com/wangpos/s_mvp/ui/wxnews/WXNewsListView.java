@@ -20,9 +20,10 @@ import java.util.ArrayList;
  * Created by qiyue on 2018/7/6.
  */
 
-public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements WXNewsContract.View,WXListAdapter.OnClickListener{
+public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements WXNewsContract.View, WXListAdapter.OnClickListener {
 
     private WXListAdapter adapter;
+
     public WXNewsListView(Context context) {
         super(context);
     }
@@ -35,28 +36,14 @@ public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements
         super(context, attrs, defStyle);
     }
 
-
-
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
-        InjectView.bind(this);
         setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new WXListAdapter(new ArrayList<>(),getContext());
+        adapter = new WXListAdapter(new ArrayList<>(), getContext());
         adapter.setmOnClickListener(this);
-        mPresenter.onAttachedView(this);
-//        mPresenter.onFindWXNews();
         mPresenter.findWXNewsByRXJava();
 
-
-    }
-
-
-    @Override
-    public void ON_DESTROY() {
-        super.ON_DESTROY();
-        InjectView.unbind(this);
-        mPresenter.onDetached();
     }
 
     @Override
@@ -71,8 +58,6 @@ public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements
 
     @Override
     public void OnFindNewsResults(WXNewsResult wxNewsResult) {
-
-        Log.i("info","wxNewsResult="+wxNewsResult.getResult().getList().size());
         adapter.setDatas(wxNewsResult.getResult().getList());
         adapter.notifyDataSetChanged();
         setAdapter(adapter);
@@ -89,7 +74,7 @@ public class WXNewsListView extends LifeRecyclerView<WXNewsPresenter> implements
         WXNewsResult.ResultBean.ListBean data = adapter.getDatas().get(position);
 
         Intent detailIntent = new Intent(getContext(), WebViewActivity.class);
-        detailIntent.putExtra(WebViewActivity.EXTRA_URL,data.getUrl());
+        detailIntent.putExtra(WebViewActivity.EXTRA_URL, data.getUrl());
         getContext().startActivity(detailIntent);
 
     }

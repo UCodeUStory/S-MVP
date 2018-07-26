@@ -49,7 +49,6 @@ public class SyncTaskActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         uploadPhotoAdapter.onDetached();
     }
 }

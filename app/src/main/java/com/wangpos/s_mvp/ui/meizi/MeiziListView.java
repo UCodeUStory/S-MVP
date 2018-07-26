@@ -73,14 +73,12 @@ public class MeiziListView extends LifeRecyclerView<MeiziPresenter> implements M
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
-        InjectView.bind(this);
 
         StaggeredGridLayoutManager mGridViewLayoutManager = new StaggeredGridLayoutManager(2,
                 StaggeredGridLayoutManager.VERTICAL);
         setLayoutManager(mGridViewLayoutManager);
         adapter = new MeiziListAdapter(new ArrayList<>(),getContext());
 //        adapter.setmOnClickListener(this);
-        mPresenter.onAttachedView(this);
 //        mPresenter.onFindWXNews();
         mPresenter.findPicture();
 
@@ -88,10 +86,4 @@ public class MeiziListView extends LifeRecyclerView<MeiziPresenter> implements M
     }
 
 
-    @Override
-    public void ON_DESTROY() {
-        super.ON_DESTROY();
-        InjectView.unbind(this);
-        mPresenter.onDetached();
-    }
 }

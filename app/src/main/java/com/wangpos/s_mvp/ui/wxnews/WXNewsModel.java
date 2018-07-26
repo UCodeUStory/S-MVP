@@ -24,19 +24,20 @@ public class WXNewsModel extends WXNewsContract.Model {
 
     private CompositeDisposable mCompositeDisposable;
 
-    public WXNewsModel(){
+    public WXNewsModel() {
         this.wxNewsApiService = ServiceFactory.getInstance().createService(WXNewsApiService.class, WXNewsApiService.WX_NEWS_API);
     }
 
     @Override
     Call findWXNews(int page, int pageSize, OnFindListener onFindListener) {
 
-        Call<WXNewsResult> call =  wxNewsApiService.findWXNews(page,pageSize,"json",WXNewsApiService.KEY);
+        Call<WXNewsResult> call = wxNewsApiService.findWXNews(page, pageSize, "json", WXNewsApiService.KEY);
 
 
         call.enqueue(new Callback<WXNewsResult>() {
             @Override
             public void onResponse(Call<WXNewsResult> call, Response<WXNewsResult> response) {
+
                 onFindListener.onFindWXNewsSuccess(response.body());
             }
 
@@ -52,12 +53,10 @@ public class WXNewsModel extends WXNewsContract.Model {
     }
 
     @Override
-    public void findWXNewsByRXJava(int page, int pageSize, ApiCallback<WXNewsResult> callback){
-        addSubscription(wxNewsApiService.findWXNewsRxJava(page,pageSize,"json",WXNewsApiService.KEY),callback);
+    public void findWXNewsByRXJava(int page, int pageSize, ApiCallback<WXNewsResult> callback) {
+        addSubscription(wxNewsApiService.findWXNewsRxJava(page, pageSize, "json", WXNewsApiService.KEY), callback);
 
     }
-
-
 
 
 }

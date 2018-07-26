@@ -54,6 +54,17 @@ public class WXNewsResult {
         private int totalPage;
         private int ps;
         private int pno;
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "totalPage=" + totalPage +
+                    ", ps=" + ps +
+                    ", pno=" + pno +
+                    ", list=" + list +
+                    '}';
+        }
+
         private List<ListBean> list;
 
         public int getTotalPage() {
@@ -139,6 +150,18 @@ public class WXNewsResult {
 
             public String getMark() {
                 return mark;
+            }
+
+            @Override
+            public String toString() {
+                return "ListBean{" +
+                        "id='" + id + '\'' +
+                        ", title='" + title + '\'' +
+                        ", source='" + source + '\'' +
+                        ", firstImg='" + firstImg + '\'' +
+                        ", mark='" + mark + '\'' +
+                        ", url='" + url + '\'' +
+                        '}';
             }
 
             public void setMark(String mark) {

@@ -48,17 +48,7 @@ public class WeatherView extends LifeRelativeLayout<WeatherPresenter> implements
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
-        InjectView.bind(this);
-
         mPresenter.getWeatherByCityName("北京");
-    }
-
-
-    @Override
-    public void ON_DESTROY() {
-        super.ON_DESTROY();
-        InjectView.unbind(this);
-        mPresenter.onDetached();
     }
 
     @Override

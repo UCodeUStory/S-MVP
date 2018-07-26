@@ -1,6 +1,7 @@
 package com.wangpos.s_mvp.base.util;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 
 
@@ -55,15 +56,13 @@ public class InjectView {
         map.remove(activity);
     }
 
-
-
-
     /**
      * bind以后相当于才findViewById，但是代码只要有注解就已经生成好了
      * @param view
      */
     public static void bind(View view) {
         String className = view.getClass().getName();
+
         try {
             //反射使用apt生成的类
             Class<?> viewClass = Class.forName(className + "$$ViewBinder");

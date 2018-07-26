@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.wangpos.s_mvp.base.BasePresenter;
 import com.wangpos.s_mvp.base.BaseView;
+import com.wangpos.s_mvp.base.util.InjectView;
 
 import java.lang.reflect.ParameterizedType;
 
@@ -39,10 +40,9 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     }
 
 
-
-
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
+        InjectView.bind(this);
         initPresenter();
         iBase = new BaseImpl(getContext());//初始化公共操作
     }
@@ -53,12 +53,6 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
                 ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments().length > 0) {
             Class mPresenterClass = (Class) ((ParameterizedType) (this.getClass()
                     .getGenericSuperclass())).getActualTypeArguments()[0];
-            /**
-             * 根据运行时获取父类Class,实力化，不至于每个子类Presenter都去new
-             *
-             * 1优点，这样子类只需要指定泛型即可使用
-             *
-             */
             try {
                 mPresenter = (P)mPresenterClass.newInstance();
             } catch (InstantiationException e) {
@@ -89,6 +83,8 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void ON_DESTROY() {
         Log.i("info","MyObserver:ON_DESTROY");
+        InjectView.unbind(this);
+        if (mPresenter != null) mPresenter.onDetached();
     }
 
     @Override

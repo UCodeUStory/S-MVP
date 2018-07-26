@@ -21,9 +21,8 @@ import android.os.Handler;
  * Created by qiyue on 2018/2/28.
  */
 
-public class HeaderView extends LifeFrameLayout implements WelcomeContract.View {
+public class HeaderView extends LifeFrameLayout<WelcomePresenter> implements WelcomeContract.View {
 
-    private WelcomeContract.Presenter mPresenter;
 
     @$(R.id.iv_header)
     public ImageView imageView;
@@ -49,24 +48,20 @@ public class HeaderView extends LifeFrameLayout implements WelcomeContract.View 
     @Override
     public void ON_CREATE() {
         super.ON_CREATE();
-        InjectView.bind(this);
         //notice 初始化presenter
-        Log.i("info","MyObserver:ON_CREATE");
         smartTaskManager = SmartTaskManager.as();
-        mPresenter = new WelcomePresenter();
-        mPresenter.onAttachedView(this);
         mPresenter.loadHeader();
 
         final int[] count = {3};
-        mHandler = new Handler(){
+        mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                if (count[0] >0){
-                    tvTime.setText("HeaderView独立加载（"+count[0]+"）");
+                if (count[0] > 0) {
+                    tvTime.setText("HeaderView独立加载（" + count[0] + "）");
                     count[0]--;
-                    mHandler.sendEmptyMessageDelayed(0,1000);
-                }else{
+                    mHandler.sendEmptyMessageDelayed(0, 1000);
+                } else {
                     tvTime.setVisibility(GONE);
                 }
             }
@@ -77,16 +72,9 @@ public class HeaderView extends LifeFrameLayout implements WelcomeContract.View 
 
 
     @Override
-    public void ON_DESTROY() {
-        super.ON_DESTROY();
-        InjectView.unbind(this);
-        mPresenter.onDetached();
-    }
-
-    @Override
     public void onLoadSuccess(int id) {
         imageView.setImageResource(id);
-        Log.i("info","onLoadSuccess "+smartTaskManager.getSize());
+        Log.i("info", "onLoadSuccess " + smartTaskManager.getSize());
         Asynctask asyncTask = smartTaskManager.getAsyncTask("initPage");
         asyncTask.onFinish();
 

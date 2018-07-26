@@ -18,6 +18,9 @@ import io.reactivex.Observable;
 
 public interface WXNewsApiService {
 
+    /**
+     * 聚合数据
+     */
 
     String WX_NEWS_API = "http://v.juhe.cn/weixin/";
 
