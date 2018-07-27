@@ -23,7 +23,7 @@
   <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,13 +31,39 @@
     tools:context=".base.WebViewActivity">
 
 
+    <FrameLayout
+        android:id="@+id/fly_title"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="50dp">
+
+
+        <ProgressBar
+            android:id="@+id/webview_pb"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/webview_progres"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Title"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+
     <WebView
         android:id="@+id/webview"
+        android:layout_below="@+id/fly_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layerType="hardware" />
-
-
-
-</LinearLayout>
+</RelativeLayout>
 

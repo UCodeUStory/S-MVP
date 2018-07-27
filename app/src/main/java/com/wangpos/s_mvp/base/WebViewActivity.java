@@ -7,12 +7,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.wangpos.s_mvp.R;
 
@@ -27,16 +29,16 @@ public class WebViewActivity extends Activity {
     private WebView webview;
     private static final int PROGRESS_RATIO = 1000;
     public final static String EXTRA_URL = "toUrl";
+    private ProgressBar webviewPb;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         webview = (WebView) findViewById(R.id.webview);
-
-
+        webviewPb = (ProgressBar) findViewById(R.id.webview_pb);
+        setWindowStatusBarColor(this,R.color.github_title);
         initCreateData();
-//        setWindowStatusBarColor(this,R.color.githubtitle);
     }
 
 
@@ -48,8 +50,6 @@ public class WebViewActivity extends Activity {
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(activity.getResources().getColor(colorResId));
 
-                //底部导航栏
-                //window.setNavigationBarColor(activity.getResources().getColor(colorResId));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,63 +66,32 @@ public class WebViewActivity extends Activity {
     }
 
     private void enableCustomClients() {
-        this.webview.setWebViewClient(new DemoWebViewClient());/*new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-            *//**
-         * @param view The WebView that is initiating the callback.
-         * @param url  The url of the page.
-         *//*
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-               *//* if (url.contains("www.vmovier.com")) {
-                   // WebViewUtils.injectCSS(EasyWebViewActivity.this, EasyWebViewActivity.this.webview, "vmovier.css");
-                } else if (url.contains("video.weibo.com")) {
-                 //   WebViewUtils.injectCSS(EasyWebViewActivity.this, EasyWebViewActivity.this.webview, "weibo.css");
-                } else if (url.contains("m.miaopai.com")) {
-                  //  WebViewUtils.injectCSS(EasyWebViewActivity.this, EasyWebViewActivity.this.webview, "miaopai.css");
-                }*//*
-            }
-        });*/
+        this.webview.setWebViewClient(new DemoWebViewClient());
         this.webview.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int progress) {
-//                WebViewActivity.this.webviewPb.setProgress(progress);
+                WebViewActivity.this.webviewPb.setProgress(progress);
                 setProgress(progress * PROGRESS_RATIO);
                 if (progress >= 80) {
 //                    WebViewActivity.this.webviewPb.setVisibility(View.GONE);
                 } else {
-//                    WebViewActivity.this.webviewPb.setVisibility(View.VISIBLE);
+                    WebViewActivity.this.webviewPb.setVisibility(View.VISIBLE);
                 }
             }
         });
     }
-
 
     class DemoWebViewClient extends WebViewClient {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             if (url.startsWith("http:") || url.startsWith("https:")) {
                 return false;
             }
-           /* Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);*/
-//  下面这一行保留的时候，原网页仍报错，新网页正常.所以注释掉后，也就没问题了
-//          view.loadUrl(url);
             return true;
         }
     }
 
     protected void initCreateData() {
-   /*     this.enableJavascript();
-        this.enableCaching();*/
         this.enableCustomClients();
-    /*    this.enableAdjust();
-        this.zoomedOut();
-*/
+
         webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);//设置js可以直接打开窗口，如window.open()，默认为false
         webview.getSettings().setJavaScriptEnabled(true);//是否允许执行js，默认为false。设置true时，会提醒可能造成XSS漏洞
         webview.getSettings().setSupportZoom(true);//是否可以缩放，默认true
@@ -135,28 +104,6 @@ public class WebViewActivity extends Activity {
 
         this.webview.loadUrl(this.getUrl());
     }
-  /*  @SuppressLint("SetJavaScriptEnabled")
-    private void enableJavascript() {
-        this.webview.getSettings().setJavaScriptEnabled(true);
-        this.webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-    }
-
-    private void enableCaching() {\
-        this.webview.getSettings().setAppCachePath(getFilesDir() + getPackageName() + "/cache");
-        this.webview.getSettings().setAppCacheEnabled(true);
-        this.webview.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-    }
-
-    private void enableAdjust() {
-        this.webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        this.webview.getSettings().setLoadWithOverviewMode(true);
-    }
-
-    private void zoomedOut() {
-        this.webview.getSettings().setLoadWithOverviewMode(true);
-        this.webview.getSettings().setUseWideViewPort(true);
-        this.webview.getSettings().setSupportZoom(true);
-    }*/
 
 
     private String getUrl() {
@@ -186,13 +133,10 @@ public class WebViewActivity extends Activity {
     public static void toUrl(Context context, String url, String title) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(EXTRA_URL, url);
-        //  intent.putExtra(EXTRA_TITLE, title);
         context.startActivity(intent);
     }
 
     /**
-     * For gank api
-     *
      * @param context context
      * @param url     url
      * @param title   title
@@ -201,8 +145,6 @@ public class WebViewActivity extends Activity {
     public static void toUrl(Context context, String url, String title, String type) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(EXTRA_URL, url);
-        // intent.putExtra(EXTRA_TITLE, title);
-        // intent.putExtra(EXTRA_GANK_TYPE, type);
         context.startActivity(intent);
     }
 
