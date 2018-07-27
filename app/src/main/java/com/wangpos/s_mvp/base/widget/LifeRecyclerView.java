@@ -22,7 +22,6 @@ import java.lang.reflect.ParameterizedType;
 public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView implements LifecycleObserver,IBase {
 
 
-
     protected P mPresenter;
 
     protected IBase iBase;
@@ -43,25 +42,8 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
         InjectView.bind(this);
-        initPresenter();
         iBase = new BaseImpl(getContext());//初始化公共操作
-    }
-
-    private void initPresenter() {
-        if (this instanceof BaseView &&
-                this.getClass().getGenericSuperclass() instanceof ParameterizedType &&
-                ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments().length > 0) {
-            Class mPresenterClass = (Class) ((ParameterizedType) (this.getClass()
-                    .getGenericSuperclass())).getActualTypeArguments()[0];
-            try {
-                mPresenter = (P)mPresenterClass.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            if (mPresenter != null) mPresenter.onAttachedView(this);
-        }
+        mPresenter = iBase.initPresenter(this);
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -91,5 +73,12 @@ public class LifeRecyclerView<P extends BasePresenter> extends RecyclerView impl
     public void toast(String msg) {
         iBase.toast(msg);
     }
+
+    @Override
+    public <P extends BasePresenter> P initPresenter(Object that) {
+        return null;
+    }
+
+
 }
 

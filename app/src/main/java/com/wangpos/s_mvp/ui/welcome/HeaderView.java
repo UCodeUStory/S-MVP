@@ -74,7 +74,7 @@ public class HeaderView extends LifeFrameLayout<WelcomePresenter> implements Wel
     @Override
     public void onLoadSuccess(int id) {
         imageView.setImageResource(id);
-        Log.i("info", "onLoadSuccess " + smartTaskManager.getSize());
+        Log.i("info", "onLoadSuccess " + smartTaskManager.getAsyncTaskSize());
         Asynctask asyncTask = smartTaskManager.getAsyncTask("initPage");
         asyncTask.onFinish();
 

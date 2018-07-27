@@ -17,7 +17,7 @@ public class Asynctask {
 
     Handler mHandler;
 
-    private Asynctask(int count){
+    private Asynctask(int count) {
         mHandler = new Handler(Looper.getMainLooper());
         latch = new CountDownLatch(count);
         endThread = new EndThread();
@@ -30,22 +30,23 @@ public class Asynctask {
         return smartTask;
     }
 
-    public void onFinish(){
+    public void onFinish() {
         latch.countDown();
     }
 
-    public void toEnd(Runnable runnable){
-         endThread.setRunnable(runnable);
-         endThread.start();
+    public void toEnd(Runnable runnable) {
+        endThread.setRunnable(runnable);
+        endThread.start();
     }
 
-    class EndThread extends Thread{
+    class EndThread extends Thread {
 
         Runnable runnable;
 
-        public void setRunnable(Runnable runnable){
+        public void setRunnable(Runnable runnable) {
             this.runnable = runnable;
         }
+
         @Override
         public void run() {
             super.run();
@@ -54,10 +55,10 @@ public class Asynctask {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (runnable!=null) {
+            if (runnable != null) {
                 //切换到UI线程
                 mHandler.post(runnable);
-            }else{
+            } else {
                 try {
                     throw new EmptyRunnableException("请添加要执行的任务");
                 } catch (EmptyRunnableException e) {
@@ -67,9 +68,12 @@ public class Asynctask {
         }
     }
 
+    public void stop() {
+        if (endThread != null) endThread.interrupt();
+    }
 
-    class EmptyRunnableException extends Exception{
-        public EmptyRunnableException(String msg){
+    class EmptyRunnableException extends Exception {
+        public EmptyRunnableException(String msg) {
             super(msg);
         }
     }

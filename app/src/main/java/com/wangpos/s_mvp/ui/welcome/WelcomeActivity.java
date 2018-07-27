@@ -49,11 +49,6 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
-//        HeaderView lifeLinearLayout = (HeaderView)$(R.id.life_linearlayout);
-//        MenuView menuView = (MenuView)$(R.id.menu_layout);
-//        BodyView bodyView = (BodyView)$(R.id.body_view) ;
-
         getLifecycle().addObserver(lifeLinearLayout);
         getLifecycle().addObserver(menuView);
         getLifecycle().addObserver(bodyView);
@@ -69,8 +64,8 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         SmartTaskManager.as().remove("initPage");
+        super.onDestroy();
 
     }
 

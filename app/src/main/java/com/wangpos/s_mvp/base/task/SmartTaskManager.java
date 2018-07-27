@@ -7,22 +7,20 @@ import java.util.HashMap;
 
 /**
  * Created by qiyue on 2017/12/22.
- *
  */
 
 public class SmartTaskManager {
 
 
-    HashMap<String, Asynctask> stmap;
+    private HashMap<String, Asynctask> asyncTasks;
 
-    HashMap<String, SyncTask> syncTaskMap;
+    private HashMap<String, SyncTask> syncTasks;
 
     private static volatile SmartTaskManager smartTaskManager;
 
-
     private SmartTaskManager() {
-        this.stmap = new HashMap<>();
-        this.syncTaskMap = new HashMap<>();
+        this.asyncTasks = new HashMap<>();
+        this.syncTasks = new HashMap<>();
     }
 
     public static SmartTaskManager as() {
@@ -41,50 +39,45 @@ public class SmartTaskManager {
 
 
     /**
-     *
      * @param key
      * @param count 线程数量
      */
-    public Asynctask put(String key,int count){
+    public Asynctask put(String key, int count) {
 
-        synchronized (stmap) {
+        synchronized (asyncTasks) {
             Asynctask smartTask = Asynctask.newInstance(count);
-            stmap.put(key,smartTask);
+            asyncTasks.put(key, smartTask);
             return smartTask;
         }
 
     }
 
-    public SyncTask put(String tag){
-        synchronized(syncTaskMap){
+    public SyncTask put(String tag) {
+        synchronized (syncTasks) {
             SyncTask syncTask = new SyncTask();
-            syncTaskMap.put(tag,syncTask);
+            syncTasks.put(tag, syncTask);
             return syncTask;
         }
 
-
     }
 
-    public Asynctask getAsyncTask(String key){
-        synchronized (stmap) {
-//            for (String s : stmap.keySet()) {
-//
+    public Asynctask getAsyncTask(String key) {
+        synchronized (asyncTasks) {
+//            for (String s : asyncTasks.keySet()) {
 //                Log.i("info","key="+s);
-//
 //            }
-
-            Asynctask smartTask = stmap.get(key);
+            Asynctask smartTask = asyncTasks.get(key);
             return smartTask;
         }
     }
 
 
-    public SyncTask getSyncTask(String tag){
-        synchronized (syncTaskMap){
+    public SyncTask getSyncTask(String tag) {
+        synchronized (syncTasks) {
             SyncTask syncTask = null;
-            if(syncTaskMap.containsKey(tag)) {
-                syncTask = syncTaskMap.get(tag);
-            }else{
+            if (syncTasks.containsKey(tag)) {
+                syncTask = syncTasks.get(tag);
+            } else {
                 syncTask = put(tag);
             }
 
@@ -95,36 +88,54 @@ public class SmartTaskManager {
 
     /**
      * remove 调对应的task，否则导致内存泄露，（这里使用sofeRefence还是可以避免的）
+     *
      * @param key
      */
-    public void remove(String key){
-        synchronized (stmap){
-            stmap.remove(key);
-            Log.i("info",""+toString());
+    public void remove(String key) {
+        synchronized (asyncTasks) {
+            Asynctask asynctask = asyncTasks.remove(key);
+            if (asynctask != null) asynctask.stop();
         }
-        synchronized (syncTaskMap){
-            syncTaskMap.remove(key);
-        }
-    }
-
-    public void clearAll(){
-        synchronized (stmap){
-            stmap.clear();
-        }
-        synchronized (syncTaskMap){
-            syncTaskMap.clear();
+        synchronized (syncTasks) {
+            SyncTask synctask = syncTasks.remove(key);
+            if (synctask != null) synctask.stop();
         }
     }
 
+    public void clearAll() {
+        synchronized (asyncTasks) {
+            for (String key : asyncTasks.keySet()) {
+                Asynctask asynctask = asyncTasks.remove(key);
+                if (asynctask != null) asynctask.stop();
+            }
+            asyncTasks.clear();
+        }
+        synchronized (syncTasks) {
+            for (String key : syncTasks.keySet()) {
+                SyncTask synctask = syncTasks.remove(key);
+                if (synctask != null) synctask.stop();
+            }
+            syncTasks.clear();
+        }
+    }
 
-    public int getSize(){
-        return stmap.size();
+
+    public int getSyncTaskSize() {
+        synchronized (syncTasks) {
+            return syncTasks.size();
+        }
+    }
+
+    public int getAsyncTaskSize() {
+        synchronized (asyncTasks) {
+            return asyncTasks.size();
+        }
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (String s : stmap.keySet()) {
+        for (String s : asyncTasks.keySet()) {
             sb.append("\n");
             sb.append(s);
         }
