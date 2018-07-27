@@ -77,11 +77,21 @@ public class MainActivity extends BaseActivity implements  RecyclerAdapter.OnCli
             case 0:
                 launch("https://github.com/UCodeUStory/S-MVP");
                 break;
+            case 1:
+                launch("https://github.com/UCodeUStory/S-MVP/blob/master/app/src/main/java/com/wangpos/s_mvp/ui/SampleContract.java");
+                break;
+            case 2:
+                launch("https://github.com/UCodeUStory/S-MVP/tree/master/sources/aop.md");
+                break;
             case 3:
                 launch(SyncTaskActivity.class);
                 break;
             case 4:
                 launch(WelcomeActivity.class);
+                break;
+            case 5:
+                break;
+            case 6:
                 break;
             case 7:
                 launch(AsyncTaskActivity.class);

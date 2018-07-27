@@ -140,6 +140,7 @@
 4. [RxJava](https://github.com/ReactiveX/RxJava)
 5. [Glide](https://github.com/bumptech/glide)
 6. [LeakCanary](https://github.com/square/leakcanary)
+7. [Aspect](http://mvnrepository.com/artifact/org.aspectj/aspectjtools)
 
 
 ****
