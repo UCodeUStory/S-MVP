@@ -15,6 +15,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.wangpos.s_mvp.R;
 
@@ -29,6 +30,7 @@ public class WebViewActivity extends Activity {
     private WebView webview;
     private static final int PROGRESS_RATIO = 1000;
     public final static String EXTRA_URL = "toUrl";
+    public final static String EXTRA_TITLE = "title";
     private ProgressBar webviewPb;
 
     @Override
@@ -103,6 +105,14 @@ public class WebViewActivity extends Activity {
         webview.getSettings().setTextSize(WebSettings.TextSize.NORMAL);
 
         this.webview.loadUrl(this.getUrl());
+
+        TextView tvTitle = (TextView)findViewById(R.id.tv_title);
+        String titleStr = getIntent().getStringExtra(WebViewActivity.EXTRA_TITLE);
+        if (titleStr!=null){
+            tvTitle.setText(titleStr);
+        }else {
+            tvTitle.setText(getString(R.string.app_title));
+        }
     }
 
 

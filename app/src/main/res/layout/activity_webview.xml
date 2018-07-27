@@ -30,13 +30,11 @@
     android:orientation="vertical"
     tools:context=".base.WebViewActivity">
 
-
     <FrameLayout
         android:id="@+id/fly_title"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         android:layout_height="50dp">
-
 
         <ProgressBar
             android:id="@+id/webview_pb"
@@ -50,6 +48,7 @@
         <TextView
             android:layout_width="match_parent"
             android:text="Title"
+            android:id="@+id/tv_title"
             android:textColor="#ffffff"
             android:background="@android:color/transparent"
             android:textSize="15sp"

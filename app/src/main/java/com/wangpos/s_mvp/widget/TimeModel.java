@@ -6,8 +6,11 @@ package com.wangpos.s_mvp.widget;
 public class TimeModel {
     public String time;
 
-    public TimeModel(String time, String content) {
+    public int id;
+
+    public TimeModel(int id,String time, String content) {
         this.time = time;
+        this.id = id;
         this.content = content;
     }
 

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">S-MVP</string>
 
+    <string name="app_title">S-MVP</string>
+
     <string name="video_upload">视频上传</string>
 </resources>

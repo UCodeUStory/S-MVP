@@ -22,6 +22,8 @@ import java.lang.reflect.ParameterizedType;
 public class LifeRelativeLayout<P extends BasePresenter> extends RelativeLayout implements LifecycleObserver {
 
     protected P mPresenter;
+
+    protected IBase iBase;
     public LifeRelativeLayout(Context context) {
         super(context);
     }
@@ -34,11 +36,11 @@ public class LifeRelativeLayout<P extends BasePresenter> extends RelativeLayout 
         super(context, attrs, defStyleAttr);
     }
 
-
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
         InjectView.bind(this);
-        initPresenter();
+        iBase = new BaseImpl(getContext());//初始化公共操作
+        mPresenter = iBase.initPresenter(this);
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -64,27 +66,4 @@ public class LifeRelativeLayout<P extends BasePresenter> extends RelativeLayout 
         if (mPresenter != null) mPresenter.onDetached();
     }
 
-
-    private void initPresenter() {
-        if (this instanceof BaseView &&
-                this.getClass().getGenericSuperclass() instanceof ParameterizedType &&
-                ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments().length > 0) {
-            Class mPresenterClass = (Class) ((ParameterizedType) (this.getClass()
-                    .getGenericSuperclass())).getActualTypeArguments()[0];
-            /**
-             * 根据运行时获取父类Class,实力化，不至于每个子类Presenter都去new
-             *
-             * 1优点，这样子类只需要指定泛型即可使用
-             *
-             */
-            try {
-                mPresenter = (P)mPresenterClass.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            if (mPresenter != null) mPresenter.onAttachedView(this);
-        }
-    }
 }

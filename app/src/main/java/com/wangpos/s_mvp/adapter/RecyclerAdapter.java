@@ -25,6 +25,10 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
 
+    public List<TimeModel> getDatas() {
+        return datas;
+    }
+
     private List<TimeModel> datas = new ArrayList<>();
     private Context context;
 

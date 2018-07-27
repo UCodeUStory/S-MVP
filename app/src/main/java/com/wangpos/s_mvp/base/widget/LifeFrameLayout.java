@@ -20,8 +20,10 @@ import java.lang.reflect.ParameterizedType;
  * Created by qiyue on 2018/2/28.
  */
 
-public class LifeFrameLayout<P extends BasePresenter>  extends FrameLayout implements LifecycleObserver {
+public class LifeFrameLayout<P extends BasePresenter>  extends FrameLayout implements LifecycleObserver,IBase{
     protected P mPresenter;
+
+    protected IBase iBase;
 
     public LifeFrameLayout(Context context) {
         super(context);
@@ -38,7 +40,8 @@ public class LifeFrameLayout<P extends BasePresenter>  extends FrameLayout imple
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
         InjectView.bind(this);
-        initPresenter();
+        iBase = new BaseImpl(getContext());//初始化公共操作
+        mPresenter = iBase.initPresenter(this);
 
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -64,21 +67,13 @@ public class LifeFrameLayout<P extends BasePresenter>  extends FrameLayout imple
         if (mPresenter != null) mPresenter.onDetached();
     }
 
+    @Override
+    public void toast(String msg) {
+        iBase.toast(msg);
+    }
 
-    private void initPresenter() {
-        if (this instanceof BaseView &&
-                this.getClass().getGenericSuperclass() instanceof ParameterizedType &&
-                ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments().length > 0) {
-            Class mPresenterClass = (Class) ((ParameterizedType) (this.getClass()
-                    .getGenericSuperclass())).getActualTypeArguments()[0];
-            try {
-                mPresenter = (P)mPresenterClass.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            if (mPresenter != null) mPresenter.onAttachedView(this);
-        }
+    @Override
+    public <P extends BasePresenter> P initPresenter(Object that) {
+        return null;
     }
 }

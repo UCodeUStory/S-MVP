@@ -24,6 +24,8 @@ import java.lang.reflect.ParameterizedType;
 public class LifeLinearLayout<P extends BasePresenter> extends LinearLayout implements LifecycleObserver {
     protected P mPresenter;
 
+    protected IBase iBase;
+
     public LifeLinearLayout(Context context) {
         super(context);
     }
@@ -40,7 +42,8 @@ public class LifeLinearLayout<P extends BasePresenter> extends LinearLayout impl
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void ON_CREATE() {
         InjectView.bind(this);
-        initPresenter();
+        iBase = new BaseImpl(getContext());//初始化公共操作
+        mPresenter = iBase.initPresenter(this);
 
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -67,21 +70,6 @@ public class LifeLinearLayout<P extends BasePresenter> extends LinearLayout impl
     }
 
 
-    private void initPresenter() {
-        if (this instanceof BaseView &&
-                this.getClass().getGenericSuperclass() instanceof ParameterizedType &&
-                ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments().length > 0) {
-            Class mPresenterClass = (Class) ((ParameterizedType) (this.getClass()
-                    .getGenericSuperclass())).getActualTypeArguments()[0];
-            try {
-                mPresenter = (P)mPresenterClass.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            if (mPresenter != null) mPresenter.onAttachedView(this);
-        }
-    }
+
 
 }
