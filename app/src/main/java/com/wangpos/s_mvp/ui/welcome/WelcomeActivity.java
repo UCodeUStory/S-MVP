@@ -13,6 +13,9 @@ import com.wangpos.s_mvp.base.task.SmartTaskManager;
 import com.wangpos.s_mvp.base.widget.LifeLinearLayout;
 import com.wangpos.s_mvp.ui.login.LoginActivity;
 
+import android.os.Handler;
+import android.widget.Toast;
+
 /**
  * Created by qiyue on 2018/2/28.
  *

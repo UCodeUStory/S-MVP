@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wangpos.s_mvp.R;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
@@ -35,6 +36,7 @@ public class BodyView extends LifeLinearLayout {
         smartTaskManager.getAsyncTask("initPage").toEnd(new Runnable() {
             @Override
             public void run() {
+                Toast.makeText(getContext(),"initfinish",Toast.LENGTH_SHORT).show();
                 tvFooter.setText("页面全部初始化完成");
             }
         });

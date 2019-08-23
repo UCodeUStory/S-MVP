@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by qiyue on 2017/12/22.
@@ -24,7 +27,6 @@ public class SmartTaskManager {
     }
 
     public static SmartTaskManager as() {
-
         if (smartTaskManager == null) {
             synchronized (SmartTaskManager.class) {
                 if (smartTaskManager == null) {

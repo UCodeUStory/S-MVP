@@ -6,12 +6,6 @@ import org.aspectj.tools.ajc.Main
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-/**
- * @使用ajc编译java代码 ， 同 时 织 入 切 片 代 码
- * 使用 AspectJ 的编译器（ajc，一个java编译器的扩展）
- * 对所有受 aspect 影响的类进行织入。
- * 在 gradle 的编译 task 中增加额外配置，使之能正确编译运行。
- */
 public class AspectjPlugin implements Plugin<Project> {
 
     void apply(Project project) {

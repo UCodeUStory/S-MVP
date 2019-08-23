@@ -1,5 +1,6 @@
 package com.wangpos.s_mvp.ui.asynctask;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +15,7 @@ import com.wangpos.s_mvp.adapter.DisplayPhotoAdapter;
 import com.wangpos.s_mvp.adapter.UploadPhotoAdapter;
 import com.wangpos.s_mvp.base.BaseActivity;
 import com.wangpos.s_mvp.base.task.SmartTaskManager;
+import com.wangpos.s_mvp.base.util.ToastUtil;
 import com.wangpos.s_mvp.ui.welcome.BodyView;
 import com.wangpos.s_mvp.ui.welcome.HeaderView;
 import com.wangpos.s_mvp.ui.welcome.MenuView;
@@ -40,14 +42,26 @@ public class AsyncTaskActivity extends BaseActivity {
     @Override
     public void initView() {
 
-        SmartTaskManager.as().put("asloadImage",9).toEnd(()->{
-
+        SmartTaskManager.as().put("asloadImage",2).toEnd(()->{
+            Toast.makeText(this,"loadFinish",Toast.LENGTH_SHORT).show();
             tvFinish.setVisibility(View.VISIBLE);
         });
 
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),3));
-        displayAdapter = new DisplayPhotoAdapter(getDatas(),getApplicationContext());
-        recyclerView.setAdapter(displayAdapter);
+        SmartTaskManager.as().getAsyncTask("asloadImage").onFinish();
+
+
+
+//        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),3));
+//        displayAdapter = new DisplayPhotoAdapter(getDatas(),getApplicationContext());
+//        recyclerView.setAdapter(displayAdapter);
+//        new Handler().postDelayed(
+//                () -> {
+//                    Toast.makeText(this,"8秒以后",Toast.LENGTH_SHORT).show();
+//                    SmartTaskManager.as().getAsyncTask("asloadImage").onFinish();
+//                    SmartTaskManager.as().getAsyncTask("asloadImage").onFinish();
+//                    SmartTaskManager.as().getAsyncTask("asloadImage").onFinish();
+//                }, 8000);
+
     }
 
 
@@ -72,6 +86,7 @@ public class AsyncTaskActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        displayAdapter.onDetached();
+//        displayAdapter.onDetached();
+        SmartTaskManager.as().remove("asloadImage");
     }
 }
